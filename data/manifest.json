@@ -1,0 +1,7 @@
+{
+  "version": "0.1.0",
+  "meta": "meta.json",
+  "nodes": ["nodes-01.json", "nodes-02.json", "nodes-03.json", "nodes-04.json", "nodes-05.json"],
+  "edges": ["edges-01.json", "edges-02.json", "edges-03.json", "edges-04.json", "edges-05.json"],
+  "counts": {"nodes": 122, "edges": 128}
+}

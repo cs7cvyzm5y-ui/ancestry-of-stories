@@ -1,0 +1,13 @@
+[
+  {
+    "id": "drawing_three",
+    "label": "Stephen King — The Drawing of the Three",
+    "type": "work",
+    "year": 1987,
+    "culture": "American",
+    "description": "The second Dark Tower volume, continuing Roland's quest immediately after The Gunslinger and introducing the companions drawn through doors into twentieth-century New York.",
+    "tags": ["fantasy", "western", "dark-tower", "series-sequence"],
+    "personal_seed": false,
+    "metrics": {"influence_score": 0.0, "betweenness": 0.0, "descendants": 2}
+  }
+]

@@ -1,0 +1,57 @@
+[
+  {
+    "source": "gunslinger_novel",
+    "target": "drawing_three",
+    "relation": "series_sequence",
+    "confidence": 5,
+    "evidence": "official series publication history",
+    "note": "Stephen King's official Dark Tower publication history lists The Gunslinger as Book I (1982) followed by The Drawing of the Three as Book II (1987). This is a sequence relationship, not a claim that one book creatively influenced the next.",
+    "source_url": "https://stephenking.com/news/page_83.html",
+    "source_label": "StephenKing.com — Dark Tower series publication history",
+    "status": "verified"
+  },
+  {
+    "source": "drawing_three",
+    "target": "waste_lands_book",
+    "relation": "series_sequence",
+    "confidence": 5,
+    "evidence": "official series publication history",
+    "note": "Stephen King's official Dark Tower publication history lists The Drawing of the Three as Book II (1987) followed by The Waste Lands as Book III (1991). This records series order rather than creative borrowing.",
+    "source_url": "https://stephenking.com/news/page_83.html",
+    "source_label": "StephenKing.com — Dark Tower series publication history",
+    "status": "verified"
+  },
+  {
+    "source": "drawing_three",
+    "target": "dark_tower",
+    "relation": "part_of_series",
+    "confidence": 5,
+    "evidence": "official series record",
+    "note": "The Drawing of the Three is volume II of the Dark Tower series.",
+    "source_url": "https://stephenking.com/works/novel/dark-tower-the-drawing-of-the-three.html",
+    "source_label": "StephenKing.com — The Drawing of the Three",
+    "status": "verified"
+  },
+  {
+    "source": "morris",
+    "target": "well_worlds_end",
+    "relation": "created",
+    "confidence": 5,
+    "evidence": "authorship",
+    "note": "William Morris wrote The Well at the World's End. This authorship edge keeps the person-level formation graph connected to the work-level influence graph.",
+    "source_url": "",
+    "source_label": "",
+    "status": "verified"
+  },
+  {
+    "source": "tolkien",
+    "target": "lotr",
+    "relation": "created",
+    "confidence": 5,
+    "evidence": "authorship",
+    "note": "J. R. R. Tolkien wrote The Lord of the Rings. This authorship edge connects Tolkien's documented formation and reading history to the work that carries those influences downstream.",
+    "source_url": "",
+    "source_label": "",
+    "status": "verified"
+  }
+]

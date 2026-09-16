@@ -1,7 +1,7 @@
 {
-  "version": "0.1.4",
+  "version": "0.1.5",
   "meta": "meta.json",
-  "nodes": ["nodes-01.json", "nodes-02.json", "nodes-03.json", "nodes-04.json", "nodes-05.json", "nodes-06.json", "nodes-07.json", "nodes-08.json", "nodes-09.json"],
-  "edges": ["edges-01.json", "edges-02.json", "edges-03.json", "edges-04.json", "edges-05.json", "edges-06.json", "edges-07.json", "edges-08.json", "edges-09.json"],
-  "counts": {"nodes": 157, "edges": 177}
+  "nodes": ["nodes-01.json", "nodes-02.json", "nodes-03.json", "nodes-04.json", "nodes-05.json", "nodes-06.json", "nodes-07.json", "nodes-08.json", "nodes-09.json", "nodes-10.json"],
+  "edges": ["edges-01.json", "edges-02.json", "edges-03.json", "edges-04.json", "edges-05.json", "edges-06.json", "edges-07.json", "edges-08.json", "edges-09.json", "edges-10.json"],
+  "counts": {"nodes": 192, "edges": 215}
 }

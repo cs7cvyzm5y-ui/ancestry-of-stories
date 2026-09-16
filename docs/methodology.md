@@ -2,161 +2,474 @@
 
 ## Core question
 
-**What had to exist — books, myths, ideas, institutions, technologies, historical events, personal experiences, artistic conventions, and other media — for a particular author or work to become possible in the form we know?**
+**What had to exist — stories, myths, languages, institutions, technologies, historical systems, lived experiences, artistic conventions, and other media — for a particular creator or work to become possible in the form we know?**
 
-The Ancestry of Stories is not primarily a recommendation engine. It is a provenance and interpretation system for creative culture.
+The Ancestry of Stories is a provenance and interpretation system for creative culture. It is not primarily a recommendation engine and it is not a biography database.
 
-## Why the database is a graph
+Version 0.2 formalizes a three-layer model:
 
-A family tree is a useful *view* but a poor *data model*. Creative inheritance is many-to-many. A novel may simultaneously adapt an older work, reject a genre convention, borrow film grammar, inherit a mythic structure indirectly, respond to a war, and reflect an author’s education or profession.
+```text
+THE WORLD
+history · institutions · place · language · religion · economy
+technology · media · artistic traditions · social structures
+                         ↓
+THE PERSON
+reading · education · profession · mentors · circles · travel
+lived experience · beliefs · artistic practice · language
+                         ↓
+THE WORK
+sources · allusions · structure · genre · characters · style
+adaptation · rejection · publication history · recombination
+```
 
-Those relationships must remain distinct edges. The interface can then render a tree, constellation, timeline, path, dossier, or thematic flow depending on the question.
+Works then enter the world of later creators. Cultural transmission is therefore a loop, not a one-way family tree.
 
-## The project should answer five families of questions
+## Why a graph
 
-1. **Ancestry** — What sources stand behind this work or author?
-2. **Descendants** — Where did this work, style, or idea travel next?
-3. **Bridges** — What connects two apparently unrelated works, movements, or media?
-4. **Persistence** — Which themes, narrative structures, anxieties, and metaphors recur across centuries, and how do their meanings change?
-5. **Hidden infrastructure** — Which obscure books, academic disciplines, translations, games, films, religious traditions, or subcultures repeatedly appear behind famous works?
+Creative inheritance is many-to-many. A work may simultaneously quote an older text, reject a convention, inherit a genre form, respond to a war, transform a religious story, borrow game mechanics, and draw on an author's profession.
 
-## The unit of knowledge is a claim
+The graph stores these as separate claims so the same evidence can support different views: ancestry, descendants, author formation, work formation, timeline, pathfinding, and theme history.
 
-Every non-trivial edge should eventually contain:
+## The three layers
 
-- source entity;
-- target entity;
-- relationship type;
-- concise claim text;
-- evidence class;
-- confidence;
-- supporting source or sources;
-- relevant locator or excerpt where licensing permits;
-- contributor;
-- review state;
-- creation/revision timestamps;
-- optional counterevidence or competing interpretation.
+### World / environment
 
-Version 0 does not yet contain all of these fields, but its schema is designed to evolve in this direction.
+This layer contains conditions larger than one creator:
+
+- historical systems and events;
+- institutions and professions;
+- places and migration systems;
+- languages and translation environments;
+- religions and philosophies;
+- oral and literary traditions;
+- economic and labor structures;
+- technologies and media;
+- artistic movements and genre conventions.
+
+World nodes are not automatically causes. They establish the environment in which transmission or formation may occur.
+
+### Person / formation
+
+A creator is a first-class node because stories often travel through human formation before entering a specific work.
+
+Relevant evidence can include:
+
+- documented reading;
+- education and languages;
+- profession;
+- mentors, editors, teachers, and creative circles;
+- religion or philosophy;
+- travel and migration;
+- military service and historical events personally experienced;
+- family storytelling;
+- artistic practice in other media;
+- creator statements about formative experiences.
+
+Biography should not be converted into psychological mind-reading. A documented experience can be represented without claiming that it caused a theme or personality trait.
+
+### Work / expression
+
+A work is where material becomes inspectable as expression.
+
+Work-level claims include:
+
+- direct influence;
+- adaptation;
+- quotation and allusion;
+- title sources;
+- research sources;
+- formal or genre models;
+- character or plot models;
+- reaction against;
+- explicit cross-media borrowing;
+- publication and series lineage.
+
+A circumstance that shaped the person does not automatically get a direct arrow to every work. Work-level edges require work-level evidence.
+
+## Relationship mechanisms
+
+Confidence answers **how well supported is this relationship?**
+
+Mechanism answers **how does this relationship travel?**
+
+Version 0.2 uses the controlled vocabulary in `data/ontology.json`.
+
+### Textual / explicit transmission
+
+The creator or work encounters, names, quotes, adapts, alludes to, reuses, or otherwise demonstrably receives material from an earlier source.
+
+### Lived experience
+
+A documented circumstance personally experienced by a creator.
+
+Examples: wartime service, migration, a profession practiced, a specific family experience.
+
+This records contact with the experience, not an inferred psychological consequence.
+
+### Historical / social context
+
+A system or condition relevant to a creator or work: colonial rule, slavery, industrial agriculture, economic crisis, legal structure, migration system, or historical setting.
+
+### Intellectual / social formation
+
+Education, profession, mentorship, creative circles, religion, philosophy, editorial environments, and institutions that shape practice.
+
+### Formal / genre inheritance
+
+Transmission of form: genre conventions, narrative structures, stylistic practice, performance forms, or compositional techniques.
+
+### Authorship / publication lineage
+
+Authorship, serialization, collection, series order, publication history, and same-author continuity.
+
+These are lineage facts, not claims that a creator influenced themself.
+
+### Reaction against
+
+A creator is shaped by resisting, reversing, parodying, rebutting, or departing from an earlier source or convention.
+
+Negative influence is still influence when documented.
+
+### Context hierarchy
+
+A broad process contains a narrower historical case.
+
+Example:
+
+```text
+Resource-extraction frontier / boom economy
+                    ↓
+Nevada mining-boom frontier
+                    ↓
+Mark Twain
+```
+
+The first arrow is abstraction, not influence.
+
+### Comparison
+
+A useful resemblance without evidence of transmission.
+
+Comparison edges are exploratory and must never be silently promoted to influence.
+
+## Abstraction and context-node discipline
+
+One of the easiest ways to corrupt the graph is to turn every interesting biographical fact into a green context bubble.
+
+Version 0.2 assigns context scope where useful:
+
+- **system** — large historical, institutional, economic, or cultural structure;
+- **pattern** — recurring process seen in multiple places or creators;
+- **tradition** — ongoing cultural, linguistic, religious, oral, artistic, or intellectual transmission;
+- **event** — historically significant event that deserves independent representation;
+- **case** — specific local manifestation of a broader system or pattern;
+- **episode** — narrow one-person event retained only when it materially clarifies a documented claim.
+
+### Promotion test
+
+Prefer a first-class context node when at least one of these is true:
+
+1. it recurs across multiple creators or works;
+2. it represents a meaningful historical, cultural, institutional, or artistic process;
+3. it is a specific event whose independent historical significance matters;
+4. the specificity is necessary to explain a direct work-level relationship.
+
+Otherwise keep the detail inside an evidence note or beneath a broader node.
+
+This preserves biography without allowing biography to become the ontology.
+
+## Mediators matter
+
+Creative transmission often does not run directly from old source to new creator.
+
+Important intermediary nodes can include:
+
+- translations;
+- anthologies;
+- teachers;
+- editors;
+- collectors;
+- oral performers;
+- religious institutions;
+- schools;
+- archives;
+- film adaptations;
+- games;
+- criticism;
+- fan communities.
+
+When a mediator materially changes what later audiences receive, it should be represented rather than erased.
+
+## Transformation, not just transmission
+
+A future mature edge should be able to say not only that material traveled, but **what changed in transit**.
+
+Examples include:
+
+- a religious story becoming a secular family structure;
+- medieval quest conventions becoming modern obsession or metafiction;
+- a mythic figure becoming a science-fictional or superhero-like character;
+- frontier history becoming frontier mythology.
+
+Version 0.2 adds an optional `transformation_note` field for this purpose.
 
 ## Evidence classes
 
 ### Explicit
-A creator directly identifies an influence, intention, source, reaction, or formative experience.
+
+A creator, tradition-bearer, or other authoritative primary source directly identifies the influence, intention, reaction, or formative relationship.
 
 ### Direct textual
-Adaptation, quotation, named allusion, demonstrable reuse, or another close textual relationship.
+
+Quotation, adaptation, named allusion, title source, demonstrable reuse, or similarly close textual relation.
 
 ### Biographical
-Letters, diaries, education, library/reading records, profession, travel, relationships, wartime service, or other documented circumstances.
+
+Letters, diaries, education, profession, travel, relationships, military service, interviews, or other documented life circumstances.
 
 ### Scholarly
-Reputable scholarship argues the relationship. The project should retain attribution rather than presenting interpretation as self-evident fact.
+
+Reputable scholarship argues the relationship. Interpretation should remain attributed where appropriate.
 
 ### Historical context
-A documented circumstance relevant to formation or subject matter. Context must not be converted automatically into psychological causation.
+
+A documented circumstance relevant to formation, setting, or subject matter.
 
 ### Inferred
-Chronology, access, and unusually specific similarities make a hypothesis plausible. These edges are useful precisely because they are labeled as hypotheses.
 
-### Comparison only
-A useful resemblance with no transmission claim. This category is essential for exploratory questions without laundering similarity into influence.
+Chronology, access, and unusually specific similarities make a hypothesis plausible but not established.
+
+### Comparison
+
+Similarity only.
 
 ### Contested
-Substantial competing accounts are preserved rather than collapsed into a single authoritative line.
+
+Substantial competing accounts remain and should be preserved.
 
 ## Confidence rubric
 
-Confidence measures support for the **relationship**, not the importance of the source or target.
+Confidence measures support for the **relationship**, never literary importance.
 
-- **5 — explicit/direct:** creator statement, direct adaptation, authorship, or comparably direct evidence.
-- **4 — strong:** well-established textual, scholarly, or biographical evidence with relatively little uncertainty.
-- **3 — contextual/likely lineage:** a well-motivated relationship whose causal strength is diffuse.
-- **2 — inference:** plausible and worth investigating, but not established.
-- **1 — comparison only:** useful similarity; never evidence of transmission by itself.
+- **5 — explicit/direct:** creator statement, direct adaptation, authorship, direct textual relation, or comparably direct evidence.
+- **4 — strong:** well-established textual, historical, scholarly, or biographical evidence with relatively little uncertainty.
+- **3 — contextual/likely lineage:** well-motivated relationship whose causal force is diffuse.
+- **2 — inference:** plausible and worth investigating.
+- **1 — comparison only:** useful similarity; not evidence of transmission.
 
-`status=review` means the claim needs a stronger source, more exact formulation, or explicit editorial review before it should be treated as publication-grade.
+`status=review` means the claim needs stronger sourcing or tighter formulation.
 
-## Editorial guardrails
+The schema also reserves `candidate` and `contested` for later contribution workflows.
 
-1. **Similarity is not influence.**
-2. Chronology is necessary but not sufficient evidence.
-3. “The culture influenced the author” is too vague; encode a concrete circumstance or omit it.
-4. Do not psychologize a creator from biography. Record documented experiences and interpretations separately.
-5. Preserve contradictory scholarship and creator accounts.
-6. Separate work-level influence from author-level influence.
-7. Translations and intermediary adaptations deserve nodes when they materially mediate transmission.
-8. Absence of an edge means “not yet represented,” not “no relationship exists.”
-9. Centrality metrics describe the sampled graph, not objective literary importance.
-10. Every substantive public claim should ultimately expose its provenance in one click.
+## Research coverage is separate from cultural importance
+
+The graph is vulnerable to a major representational error: mistaking **what is easy to research** for **what mattered most**.
+
+A heavily studied English-language writer may have:
+
+- digitized letters;
+- searchable interviews;
+- major biographies;
+- university archives;
+- established scholarly editions;
+- decades of criticism.
+
+A creator or tradition outside that archival environment may have oral transmission, undigitized material, scholarship in languages not yet reviewed, community-held knowledge, archival loss, or records produced mainly by outsiders.
+
+A denser graph therefore does not imply richer ancestry or greater cultural importance.
+
+`data/research-coverage.json` records the project's research state separately from graph metrics.
+
+Coverage status is qualitative:
+
+- `unassessed`;
+- `seed`;
+- `partial`;
+- `substantial`.
+
+Source environment is also qualitative:
+
+- `digitally_rich`;
+- `mixed`;
+- `limited`;
+- `unknown`;
+- `not_applicable`.
+
+These describe **our access and research**, not the culture or creator.
+
+See `docs/bias-and-coverage.md`.
+
+## Source bias and cultural responsibility
+
+The project is currently being built through an English-speaking, U.S.-based research workflow. That creates predictable bias.
+
+Expansion should actively check for:
+
+- English-language search bias;
+- digitization bias;
+- archival survival bias;
+- canon bias;
+- gender and class bias in preserved correspondence;
+- colonial and missionary collecting bias;
+- catalog-description bias;
+- underrepresentation of children's literature, comics, games, oral narrative, fan culture, and popular genre;
+- traditions represented mainly through outsiders;
+- translations disappearing from the transmission chain;
+- Indigenous or community-held knowledge treated as freely extractable because it appears online.
+
+### Oral and community-held traditions
+
+A printed collection is not automatically equivalent to the living tradition from which material was gathered.
+
+Where relevant:
+
+- preserve specific communities and genres;
+- model collectors, translators, and archives as mediators;
+- prefer community-authored description and scholarship;
+- respect cultural protocols and restrictions;
+- do not reproduce sensitive or restricted material merely because an institution digitized it;
+- identify when external archives are standing in for community voices;
+- record uncertainty rather than filling source gaps with inference.
+
+## Negative findings and missing edges
+
+Absence of an edge means **not yet represented**, not “no relationship exists.”
+
+A defensible negative finding must record the search scope: languages, archives, source types, and time period reviewed.
+
+“No evidence found in currently reviewed English-language digital sources” is different from “there was no influence.”
+
+## Dossier coverage standard
+
+A mature author dossier should consider, where relevant:
+
+- documented reading;
+- childhood and family storytelling;
+- languages and translations;
+- education;
+- religion and philosophy;
+- profession;
+- place and landscape;
+- class and economic setting;
+- war, migration, displacement, or other lived events;
+- mentors and creative circles;
+- other artistic media;
+- historical systems;
+- major works and work-specific sources;
+- downstream influence;
+- non-English scholarship;
+- community-authored or oral sources;
+- archival silences.
+
+Not every category applies to every creator.
+
+## Editorial red-team review
+
+As the graph grows, expansion alone becomes dangerous. Periodic adversarial review should ask:
+
+- Which edges are overclaimed?
+- Which context nodes are too narrow?
+- Which nodes are doing too much conceptual work?
+- Which paths violate chronology?
+- Which relationship types are used inconsistently?
+- Which dense nodes are artifacts of archival privilege?
+- Which traditions appear isolated because the project has not reviewed their languages or source environments?
+- Which mediators are missing?
+- Where has a specific case been mistaken for a universal category?
+- Where has similarity been laundered into influence?
+
+The graph should be able to criticize its own structure.
 
 ## Public views
 
-### Constellation
-Free network exploration for clusters, bridge nodes, and unexpected media/cultural connections.
+### Combined ancestry
 
-### Ancestry
-Incoming paths to a selected node, with user-controlled depth and evidence threshold.
-
-### Descendants
-The reverse view: where a work, author, technique, or tradition travels downstream.
-
-### Timeline
-Chronology helps prevent impossible influence claims and reveals bursts of reuse after translation, adaptation, war, or technological change.
-
-### Why this work?
-A readable evidence dossier: strongest explicit sources first, then biography/context, then scholarship, then inference.
-
-### Path finder
-“Connect *The Odyssey* to *Dungeon Crawler Carl*.” The best path is not necessarily the mathematically shortest. A future scorer should combine evidence strength, path length, relationship diversity, and temporal plausibility.
-
-### Theme river
-Track motifs such as descent, apocalypse, doubles, forbidden knowledge, frontier, memory, artificial persons, or reluctant heroism through time, while distinguishing persistence from independent reinvention.
+All supported upstream mechanisms under the current filters.
 
 ### Author formation
-For a person rather than a work: childhood reading, schooling, languages, profession, wars, places, intellectual circles, religious/philosophical formation, artistic media, and stated influences.
+
+Focuses on the person: world, reading, profession, mentors, lived experience, and intellectual formation.
+
+### Work formation
+
+Focuses on the work: direct sources, formal inheritance, reaction, publication lineage, and authorship.
+
+### Descendants
+
+Where a work, person, tradition, or technique travels downstream.
+
+### Timeline
+
+Planned view that places the same claims on chronological lanes, preserving date ranges and elapsed time.
+
+### Why this work?
+
+Evidence-first dossier: strongest direct claims, formation, context, scholarship, inference.
+
+### Path finder
+
+The strongest explanatory path is not necessarily the shortest path. Future path scoring should consider evidence strength, relationship mechanism, path length, chronology, and interpretive usefulness.
+
+### Theme river
+
+Track an idea or motif through time while recording how its meaning changes.
 
 ## Website first; agent second
 
-The public website should remain the inspectable object because users need to see and audit claims. A natural-language agent can later translate questions into graph and retrieval operations, explain evidence-backed paths, and propose candidate edges.
+The public graph should remain inspectable. Readers need to see claims, evidence, uncertainty, research gaps, and source access.
 
-A model-generated connection must begin life as **candidate/inferred**. Language generation cannot upgrade its own claim to verified status.
+A future natural-language agent can:
+
+- translate questions into graph traversal;
+- explain evidence-backed paths;
+- identify missing context;
+- propose candidate connections;
+- search for contradictory evidence.
+
+It must not verify its own generated claim.
 
 ## Long-term architecture
 
-Version 0 is static HTML plus JSON shards. This keeps the concept easy to inspect and fork.
+Version 0.2 remains static HTML plus JSON shards so the ontology stays easy to inspect and fork.
 
-A later public version can use:
+A later version may use:
 
-- PostgreSQL for entities, claims, sources, contributors, and revision history;
-- recursive SQL for graph traversal initially;
-- full-text search over claims and evidence notes;
-- embeddings over source excerpts for discovery, never truth assignment;
-- a web graph library such as Cytoscape.js, Sigma.js, D3, or Vis Network;
-- a read-only public API and bulk exports;
-- human moderation and citation review for contributed claims.
+- PostgreSQL for entities, claims, sources, contributors, revisions, and coverage;
+- recursive SQL for graph traversal;
+- full-text search over evidence;
+- embeddings for discovery only, never truth assignment;
+- human moderation;
+- public API and bulk export;
+- provenance-aware contribution workflow.
 
-A dedicated graph database should be added only if traversal scale or path scoring warrants the operational complexity.
+A graph database is unnecessary until traversal or path-scoring scale justifies it.
 
-## Discovery sources
+## Long-term analytic features
 
-Candidate edges can be discovered through Wikidata, OpenAlex, library catalogs, authority files, archival finding aids, biographies, criticism, interviews, letters, diaries, lectures, and creator estates. Discovery is not verification.
+### The Obscure Shelf
 
-Source preference is:
+Find upstream works or traditions that are structurally important to documented creator paths but less prominent in general readership.
 
-1. primary creator source;
-2. estate, archive, scholarly edition, or institutional record;
-3. peer-reviewed or university-press scholarship;
-4. high-quality biography or criticism;
-5. reliable journalism/interview;
-6. reference databases as discovery tools.
+### Idea mutation
 
-## A long-term feature: The Obscure Shelf
+Trace how a motif or structure changes meaning across generations rather than merely counting reuse.
 
-The graph can eventually identify upstream nodes that are unusually frequent in creator-to-creator paths, relatively obscure in general readership, strongly evidenced, and structurally important as bridges. This can surface books, translations, academic texts, games, magazines, myths, or other sources that writers repeatedly encounter even when general audiences do not.
+### Research-bias audit
 
-## Version 0 limitations
+Compare graph density with coverage metadata to identify where the corpus may be reflecting source access instead of cultural history.
 
-Version 0 is a curated seed, not a representative sample. It is Western- and English-language-heavy in places, uses approximate dates for some traditions, includes review-level claims, and contains exploratory metrics. These limitations should remain visible while the corpus expands.
+## Version 0.2 limitations
 
-The prototype succeeds if it causes a user to ask a better next question rather than merely admire the network.
+Version 0.2 is still a curated seed.
+
+It remains:
+
+- Western- and English-language-heavy;
+- uneven in dossier depth;
+- dependent on accessible digital research;
+- incomplete in translations and intermediary transmission;
+- incomplete in oral and community-authored sources;
+- exploratory in its abstraction hierarchy;
+- not a representative sample of world literature.
+
+The prototype succeeds if it helps a reader ask a better question and understand why the graph believes a connection — while still making it easy to disagree.

@@ -1,0 +1,12 @@
+{
+  "title": "The Ancestry of Stories — Version 0",
+  "version": "0.1.0",
+  "scope": "Prototype knowledge graph of literary and creative influence with cultural, biographical, historical, and cross-media context.",
+  "method_note": "Edges distinguish explicit influence from scholarship, lineage, context, inference, and comparison. A connection is not automatically a claim of direct borrowing.",
+  "limitations": [
+    "Curated seed corpus, not a representative sample of world literature.",
+    "Network metrics describe this prototype only and must not be interpreted as universal rankings.",
+    "Edges marked review require stronger or more specific sourcing before publication as authoritative claims.",
+    "Approximate dates are used for traditions and composite ancient works."
+  ]
+}

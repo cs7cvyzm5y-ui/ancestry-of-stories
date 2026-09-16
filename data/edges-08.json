@@ -1,0 +1,156 @@
+[
+  {
+    "source": "cs_lewis",
+    "target": "narnia",
+    "relation": "created",
+    "confidence": 5,
+    "evidence": "authorship",
+    "note": "C. S. Lewis wrote The Chronicles of Narnia. This authorship edge allows Lewis's intellectual and social formation to feed into the work-level graph.",
+    "source_url": "https://www.cslewis.com/c-s-lewis-j-r-r-tolkien-and-the-inklings/",
+    "source_label": "CSLewis.com — Lewis, Tolkien, and the Inklings",
+    "status": "verified"
+  },
+  {
+    "source": "tolkien",
+    "target": "cs_lewis",
+    "relation": "intellectual_influence",
+    "confidence": 5,
+    "evidence": "Lewis letters / documented friendship",
+    "note": "Lewis explicitly credited his long discussion with Tolkien and Hugo Dyson as important to his conversion to Christianity. Their friendship also centered on myth, language, imagination, and literary criticism; this edge is person-level formation, not a claim that Tolkien directly authored Narnian ideas.",
+    "source_url": "https://www.cslewis.com/lewis-on-tolkien-3/",
+    "source_label": "CSLewis.com — Lewis on Tolkien",
+    "status": "verified"
+  },
+  {
+    "source": "cs_lewis",
+    "target": "tolkien",
+    "relation": "creative_encouragement",
+    "confidence": 5,
+    "evidence": "Tolkien retrospective statement",
+    "note": "Tolkien later described Lewis's sustained interest and encouragement as crucial to treating his legendarium as more than a private hobby and to bringing The Lord of the Rings to completion. This is encouragement and creative exchange rather than simple one-way textual influence.",
+    "source_url": "https://www.cslewis.com/mere-friendship-lewis-on-a-great-joy/",
+    "source_label": "CSLewis.com — Mere Friendship",
+    "status": "verified"
+  },
+  {
+    "source": "inklings",
+    "target": "cs_lewis",
+    "relation": "creative_circle",
+    "confidence": 5,
+    "evidence": "documented literary circle",
+    "note": "Lewis was a central Inkling; the group functioned as an audience and criticism network for works in progress and as a forum for literary, theological, and cultural discussion.",
+    "source_url": "https://www.cslewis.com/c-s-lewis-j-r-r-tolkien-and-the-inklings/",
+    "source_label": "CSLewis.com — Lewis, Tolkien, and the Inklings",
+    "status": "verified"
+  },
+  {
+    "source": "inklings",
+    "target": "tolkien",
+    "relation": "creative_circle",
+    "confidence": 5,
+    "evidence": "documented literary circle",
+    "note": "Tolkien read and discussed works in progress within the Inklings, making the group part of the social and critical environment in which his fiction developed.",
+    "source_url": "https://www.cslewis.com/c-s-lewis-j-r-r-tolkien-and-the-inklings/",
+    "source_label": "CSLewis.com — Lewis, Tolkien, and the Inklings",
+    "status": "verified"
+  },
+  {
+    "source": "achebe",
+    "target": "things_fall_apart",
+    "relation": "created",
+    "confidence": 5,
+    "evidence": "authorship",
+    "note": "Chinua Achebe wrote Things Fall Apart.",
+    "source_url": "https://www.loc.gov/loc/lcib/0812/achebe.html",
+    "source_label": "Library of Congress — Achebe's Impact",
+    "status": "verified"
+  },
+  {
+    "source": "yeats_second_coming",
+    "target": "things_fall_apart",
+    "relation": "title_source",
+    "confidence": 5,
+    "evidence": "author statement / direct title borrowing",
+    "note": "Achebe said the phrase 'things fall apart' from Yeats's The Second Coming seemed exactly right for the novel's title. This is a direct textual relationship, not merely a thematic resemblance.",
+    "source_url": "https://www.theparisreview.org/interviews/1720/the-art-of-fiction-no-139-chinua-achebe",
+    "source_label": "The Paris Review — Chinua Achebe interview",
+    "status": "verified"
+  },
+  {
+    "source": "igbo_oral_tradition",
+    "target": "achebe",
+    "relation": "formation_context",
+    "confidence": 5,
+    "evidence": "author statement",
+    "note": "Achebe described growing up with stories told by his mother, elder sister, family visitors, and village life, and later connected the need for Africans to tell their own stories to his decision to become a writer.",
+    "source_url": "https://www.theparisreview.org/interviews/1720/the-art-of-fiction-no-139-chinua-achebe",
+    "source_label": "The Paris Review — Chinua Achebe interview",
+    "status": "verified"
+  },
+  {
+    "source": "igbo_oral_tradition",
+    "target": "things_fall_apart",
+    "relation": "linguistic_cultural_source",
+    "confidence": 5,
+    "evidence": "textual / scholarly",
+    "note": "The novel embeds Igbo words, proverbs, metaphors, speech rhythms, social institutions, and folk wisdom within English prose, making Igbo linguistic and oral resources part of its formal construction.",
+    "source_url": "https://www.loc.gov/loc/lcib/0812/achebe.html",
+    "source_label": "Library of Congress — Achebe's Impact",
+    "status": "verified"
+  },
+  {
+    "source": "british_colonial_nigeria",
+    "target": "things_fall_apart",
+    "relation": "historical_context",
+    "confidence": 5,
+    "evidence": "historical setting / institutional scholarship",
+    "note": "Things Fall Apart is set in the 1890s and directly dramatizes the arrival and impact of British colonial and missionary power on Igbo society.",
+    "source_url": "https://www.loc.gov/item/2021688176/",
+    "source_label": "Library of Congress — 50th Anniversary of Things Fall Apart",
+    "status": "verified"
+  },
+  {
+    "source": "garcia_marquez_person",
+    "target": "marquez",
+    "relation": "created",
+    "confidence": 5,
+    "evidence": "authorship",
+    "note": "Gabriel García Márquez wrote One Hundred Years of Solitude, published in 1967.",
+    "source_url": "https://www.loc.gov/item/n79063441/gabriel-garcia-marquez-colombia-1928-2014/",
+    "source_label": "Library of Congress — Gabriel García Márquez biography",
+    "status": "verified"
+  },
+  {
+    "source": "marquez_childhood_storytelling",
+    "target": "garcia_marquez_person",
+    "relation": "formation_context",
+    "confidence": 5,
+    "evidence": "author interview",
+    "note": "García Márquez traced his storytelling impulse to an extraordinary childhood among imaginative and superstitious people and specifically remembered his grandmother telling frightening stories matter-of-factly.",
+    "source_url": "https://www.unesco.org/en/articles/interview-gabriel-garcia-marquez-0",
+    "source_label": "UNESCO — Interview with Gabriel García Márquez",
+    "status": "verified"
+  },
+  {
+    "source": "banana_massacre_1928",
+    "target": "marquez",
+    "relation": "historical_source",
+    "confidence": 5,
+    "evidence": "historical scholarship / direct fictionalization",
+    "note": "The novel's banana-company strike and massacre deliberately transform the 1928 repression of banana workers in Colombia into Macondo's history. Scholarship also cautions that the novel's version should not be treated as a literal historical casualty count.",
+    "source_url": "https://academic.oup.com/book/48745/chapter-abstract/420644157",
+    "source_label": "Oxford Academic — Banana Strike and Military Massacre",
+    "status": "verified"
+  },
+  {
+    "source": "colombian_civil_wars",
+    "target": "marquez",
+    "relation": "historical_context",
+    "confidence": 3,
+    "evidence": "literary-historical scholarship",
+    "note": "Macondo's repeated Liberal-Conservative wars echo Colombia's recurrent civil conflicts and political violence. This edge records a historical field rather than asserting that every fictional campaign maps one-to-one onto a specific battle.",
+    "source_url": "https://researchers.westernsydney.edu.au/en/publications/one-hundred-years-of-solitude-or-solidarity-colombias-forgotten-r/",
+    "source_label": "Western Sydney University — Colombia's historical violence and One Hundred Years of Solitude",
+    "status": "review"
+  }
+]

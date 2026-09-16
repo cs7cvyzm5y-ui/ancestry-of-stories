@@ -6,7 +6,7 @@
 <title>The Ancestry of Stories — Version 0</title>
 <script src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
 <style>
-:root{--bg:#0d1016;--panel:#151a23;--line:#303847;--text:#eee9df;--muted:#aab2c0;--gold:#d8b36d;--blue:#8fb7db;--purple:#ae93cf;--green:#85b89f;--coral:#d58f79}
+:root{--bg:#0d1016;--panel:#151a23;--line:#303847;--text:#eee9df;--muted:#aab2c0;--gold:#d8b36d;--blue:#8fb7db;--purple:#ae93cf;--green:#85b89f;--coral:#d58f79;--teal:#76b8ad}
 *{box-sizing:border-box}
 html,body{height:100%}
 body{margin:0;background:var(--bg);color:var(--text);font:14px/1.45 system-ui,-apple-system,Segoe UI,sans-serif;height:100vh;overflow:hidden}
@@ -19,9 +19,10 @@ header{height:60px;padding:12px 18px;border-bottom:1px solid var(--line);display
 h3{font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:#d7c49a;margin:0 0 8px}.section{padding-bottom:13px;margin-bottom:13px;border-bottom:1px solid var(--line)}
 input,select,button{font:inherit}input,select{width:100%;background:#0e131b;color:var(--text);border:1px solid #3a4352;border-radius:6px;padding:8px}button{background:#222a38;border:1px solid #465267;color:var(--text);border-radius:6px;padding:7px 9px;cursor:pointer}button:hover{background:#2b3547}
 .row{display:flex;gap:7px;align-items:center;margin:7px 0}.row>*{min-width:0}.row select{width:auto;flex:1 1 auto}.grow{flex:1 1 auto}#apply{flex:0 0 78px;white-space:nowrap}
-.small{font-size:11px;color:var(--muted)}.preset{display:block;width:100%;text-align:left;margin:5px 0}.badge{display:inline-block;border:1px solid #4a5568;border-radius:999px;padding:2px 6px;font-size:10px;margin:2px 3px 2px 0}.review{border-color:#946e45;color:#e1b27f}.title{font:24px Georgia,serif;margin:0 0 4px}.meta{color:var(--muted);font-size:12px}.desc{margin:10px 0;line-height:1.55}.edge{border:1px solid #303847;background:#10151d;border-radius:7px;padding:8px;margin:7px 0;font-size:11px}.edge strong{font-size:12px}.source a{color:#bdd3f0}.warning{border-left:3px solid #8b6d41;background:#1c1912;padding:8px 9px;font-size:11px;color:#d4cab8;margin-bottom:12px}.status{position:absolute;right:12px;bottom:12px;background:#111722e8;border:1px solid var(--line);padding:6px 8px;border-radius:6px;font-size:10px;color:var(--muted);z-index:5}
-@media(max-width:1000px){.layout{grid-template-columns:270px minmax(0,1fr)}.right{display:none}.note{display:none}}
-@media(max-width:700px){body{overflow:auto;height:auto}.layout{display:block;height:auto;overflow:visible}.main{height:65vh;min-height:420px}.right{display:block}.left,.right{border:0}}
+.small{font-size:11px;color:var(--muted)}.preset{display:block;width:100%;text-align:left;margin:5px 0}.badge{display:inline-block;border:1px solid #4a5568;border-radius:999px;padding:2px 6px;font-size:10px;margin:2px 3px 2px 0}.review{border-color:#946e45;color:#e1b27f}.internal{border-color:#4c8f87;color:#9ed4cc}.title{font:24px Georgia,serif;margin:0 0 4px}.meta{color:var(--muted);font-size:12px}.desc{margin:10px 0;line-height:1.55}.edge{border:1px solid #303847;background:#10151d;border-radius:7px;padding:8px;margin:7px 0;font-size:11px}.edge strong{font-size:12px}.source a{color:#bdd3f0}.warning{border-left:3px solid #8b6d41;background:#1c1912;padding:8px 9px;font-size:11px;color:#d4cab8;margin-bottom:12px}.status{position:absolute;right:12px;bottom:12px;background:#111722e8;border:1px solid var(--line);padding:6px 8px;border-radius:6px;font-size:10px;color:var(--muted);z-index:5}
+.legend{position:absolute;left:12px;top:12px;z-index:5;background:#111722e8;border:1px solid var(--line);border-radius:7px;padding:7px 9px;font-size:10px;color:var(--muted);max-width:520px}.legend-row{display:flex;gap:10px;align-items:center;flex-wrap:wrap}.legend-row+.legend-row{margin-top:5px;padding-top:5px;border-top:1px solid #293140}.legend-item{display:inline-flex;align-items:center;gap:4px;white-space:nowrap}.swatch{width:10px;height:10px;border-radius:50%;border:1px solid #d8dce5}.sw-work{background:var(--gold)}.sw-person{background:var(--blue)}.sw-tradition{background:var(--purple)}.sw-context{background:var(--green)}.sw-medium{background:var(--coral)}.linekey{width:20px;height:0;border-top:2px solid #77849b}.linekey.internal-line{border-top-color:var(--teal);border-top-style:dashed}.linekey.compare-line{border-top-color:#6c7890;border-top-style:dashed;opacity:.65}
+@media(max-width:1000px){.layout{grid-template-columns:270px minmax(0,1fr)}.right{display:none}.note{display:none}.legend{max-width:420px}}
+@media(max-width:700px){body{overflow:auto;height:auto}.layout{display:block;height:auto;overflow:visible}.main{height:65vh;min-height:420px}.right{display:block}.left,.right{border:0}.legend{font-size:9px;right:10px;max-width:none}}
 </style>
 </head>
 <body>
@@ -35,7 +36,7 @@ input,select,button{font:inherit}input,select{width:100%;background:#0e131b;colo
   <div class="section"><h3>Connect two things</h3><input id="a" list="nodes" placeholder="Start"><div style="height:6px"></div><input id="b" list="nodes" placeholder="End"><div class="row"><button id="path" class="grow">Find evidence path</button></div><div id="pathout" class="small"></div></div>
   <div class="small">Confidence measures support for a relationship, not literary importance. Comparison-only edges are deliberately separated from transmission claims.</div>
 </aside>
-<main class="main"><div id="network"></div><div id="status" class="status">Loading graph…</div></main>
+<main class="main"><div id="network"></div><div class="legend" aria-label="Graph legend"><div class="legend-row"><span class="legend-item"><span class="swatch sw-work"></span>work</span><span class="legend-item"><span class="swatch sw-person"></span>person</span><span class="legend-item"><span class="swatch sw-tradition"></span>tradition</span><span class="legend-item"><span class="swatch sw-context"></span>history/context</span><span class="legend-item"><span class="swatch sw-medium"></span>film/game/medium</span></div><div class="legend-row"><span class="legend-item"><span class="linekey"></span>influence / context</span><span class="legend-item"><span class="linekey internal-line"></span>same-author / publication lineage</span><span class="legend-item"><span class="linekey compare-line"></span>comparison only</span></div></div><div id="status" class="status">Loading graph…</div></main>
 <aside class="side right"><div class="warning">Version 0 mixes verified claims with clearly labeled review hypotheses and comparison edges. A visible line does not automatically mean direct borrowing.</div><div id="detail" class="small">Select a node to inspect its evidence.</div></aside>
 </div>
 <script type="module">
@@ -51,12 +52,12 @@ const incoming=new Map(G.nodes.map(n=>[n.id,[]])),outgoing=new Map(G.nodes.map(n
 G.edges.forEach((e,i)=>{e._id=`e${i}`;incoming.get(e.target)?.push(e);outgoing.get(e.source)?.push(e)});
 let selected='dark_tower',network;
 const styles={work:'#d8b36d',person:'#8fb7db',tradition:'#ae93cf',context:'#85b89f',medium:'#d58f79'};
-const datalist=document.getElementById('nodes');
-G.nodes.slice().sort((a,b)=>a.label.localeCompare(b.label)).forEach(n=>{const o=document.createElement('option');o.value=n.label;datalist.appendChild(o)});
+const datalist=document.getElementById('nodes'); G.nodes.sort((a,b)=>a.label.localeCompare(b.label)).forEach(n=>{const o=document.createElement('option');o.value=n.label;datalist.appendChild(o)});
 function resolve(s){const q=s.trim().toLowerCase();if(!q)return null;return (G.nodes.find(n=>n.label.toLowerCase()===q)||G.nodes.find(n=>n.label.toLowerCase().includes(q)))?.id||null}
 function allowed(e){return e.confidence>=+document.getElementById('confidence').value&&(document.getElementById('review').checked||e.status!=='review')}
 function neighborhood(root,dir,depth){const seen=new Set([root]);let f=[root];for(let d=0;d<depth;d++){const nxt=[];for(const id of f){for(const e of (dir==='in'?incoming:outgoing).get(id)||[]){if(!allowed(e))continue;const x=dir==='in'?e.source:e.target;if(!seen.has(x)){seen.add(x);nxt.push(x)}}}f=nxt}return seen}
-function edgeCard(e,dir){const other=M.get(dir==='in'?e.source:e.target);const src=e.source_url?`<div class="source"><a target="_blank" rel="noopener" href="${e.source_url}">source ↗</a></div>`:'';return `<div class="edge"><strong>${dir==='in'?other.label+' → selected':'selected → '+other.label}</strong><br>${e.relation.replaceAll('_',' ')} · confidence ${e.confidence}${e.status==='review'?' <span class="badge review">review</span>':''}<div>${e.note}</div>${src}</div>`}
+const relationNames={author_internal_network:'same-author / shared universe',collected_into:'publication history — collected into',series_foundation:'publication history — series foundation',part_of_series:'publication history — part of series',title_source:'direct title source'};
+function edgeCard(e,dir){const other=M.get(dir==='in'?e.source:e.target);const src=e.source_url?`<div class="source"><a target="_blank" rel="noopener" href="${e.source_url}">source ↗</a></div>`:'';const internal=e.relation==='author_internal_network'?'<span class="badge internal">same author</span>':(['collected_into','series_foundation','part_of_series'].includes(e.relation)?'<span class="badge internal">publication lineage</span>':'');const label=relationNames[e.relation]||e.relation.replaceAll('_',' ');return `<div class="edge"><strong>${dir==='in'?other.label+' → selected':'selected → '+other.label}</strong><br>${label} · confidence ${e.confidence}${internal}${e.status==='review'?' <span class="badge review">review</span>':''}<div>${e.note}</div>${src}</div>`}
 function detail(id){selected=id;const n=M.get(id);if(!n)return;const ins=[...(incoming.get(id)||[])].sort((a,b)=>b.confidence-a.confidence),outs=[...(outgoing.get(id)||[])].sort((a,b)=>b.confidence-a.confidence);document.getElementById('detail').innerHTML=`<h2 class="title">${n.label}</h2><div class="meta">${n.type}${n.year!=null?' · '+(n.year<0?Math.abs(n.year)+' BCE':n.year):''}${n.culture?' · '+n.culture:''}</div><div class="desc">${n.description}</div><div>${n.tags.map(t=>`<span class="badge">${t}</span>`).join('')}</div><h3 style="margin-top:16px">Incoming — what sits behind it</h3>${ins.length?ins.map(e=>edgeCard(e,'in')).join(''):'<div class="small">No incoming edges in Version 0.</div>'}<h3 style="margin-top:16px">Outgoing — what it feeds</h3>${outs.length?outs.map(e=>edgeCard(e,'out')).join(''):'<div class="small">No outgoing edges in Version 0.</div>'}`}
 function render(ids=null){
  const ns=G.nodes.filter(n=>!ids||ids.has(n.id));
@@ -64,8 +65,22 @@ function render(ids=null){
  const es=G.edges.filter(e=>keep.has(e.source)&&keep.has(e.target)&&allowed(e));
  const status=document.getElementById('status');
  status.textContent=`Laying out ${ns.length} nodes…`;
- const nodes=new vis.DataSet(ns.map(n=>({id:n.id,label:n.label,shape:n.type==='work'?'box':n.type==='person'?'dot':'ellipse',color:{background:styles[n.type],border:'#d8dce5'},font:{color:'#151515',size:11},borderWidth:n.personal_seed?3:1,margin:7})));
- const edges=new vis.DataSet(es.map(e=>({id:e._id,from:e.source,to:e.target,arrows:e.relation==='parallel'?'':'to',dashes:e.confidence===1||e.relation==='parallel',width:.5+e.confidence*.35,color:{color:e.status==='review'?'#625a50':'#6c7890',opacity:.35+.1*e.confidence},title:`${e.relation}\nconfidence ${e.confidence}\n${e.note}`})));
+ const publicationRelations=new Set(['author_internal_network','collected_into','series_foundation','part_of_series']);
+ const nodes=new vis.DataSet(ns.map(n=>({
+   id:n.id,label:n.label,
+   shape:n.type==='work'?'box':n.type==='person'?'dot':'ellipse',
+   color:{background:styles[n.type],border:'#d8dce5'},
+   font:{color:n.type==='person'?'#dce8f5':'#151515',size:11,strokeWidth:n.type==='person'?4:0,strokeColor:'#0d1016'},
+   borderWidth:n.personal_seed?3:1,margin:7
+ })));
+ const edges=new vis.DataSet(es.map(e=>{
+   const internal=publicationRelations.has(e.relation);
+   const comparison=e.confidence===1||e.relation==='parallel';
+   return {id:e._id,from:e.source,to:e.target,arrows:e.relation==='parallel'?'':'to',dashes:internal?[7,5]:comparison,
+     width:.5+e.confidence*.35,
+     color:{color:internal?'#76b8ad':(e.status==='review'?'#625a50':'#6c7890'),opacity:.35+.1*e.confidence},
+     title:`${relationNames[e.relation]||e.relation}\nconfidence ${e.confidence}\n${e.note}`};
+ }));
  if(network)network.destroy();
  network=new vis.Network(document.getElementById('network'),{nodes,edges},{interaction:{hover:true,navigationButtons:true},physics:{enabled:true,solver:'forceAtlas2Based',forceAtlas2Based:{gravitationalConstant:-45,centralGravity:.008,springLength:130,springConstant:.04},stabilization:{enabled:true,iterations:180,fit:true}}});
  network.on('selectNode',p=>detail(p.nodes[0]));
@@ -85,8 +100,7 @@ document.getElementById('confidence').onchange=apply;
 document.getElementById('review').onchange=apply;
 document.querySelectorAll('.preset').forEach(b=>b.onclick=()=>{selected=b.dataset.id;document.getElementById('search').value=M.get(selected)?.label||'';document.getElementById('mode').value=b.dataset.mode||'ancestors';document.getElementById('depth').value=b.dataset.id==='dungeon_carl'?3:2;apply()});
 document.getElementById('path').onclick=()=>{const a=resolve(document.getElementById('a').value),b=resolve(document.getElementById('b').value),out=document.getElementById('pathout');if(!a||!b){out.textContent='Choose two graph nodes.';return}const p=pathfind(a,b);out.textContent=p?p.map(id=>M.get(id).label).join(' → '):'No path under the current evidence filter.'};
-document.getElementById('search').value=M.get(selected)?.label||'';
-apply();
+render();detail(selected);
 </script>
 </body>
 </html>

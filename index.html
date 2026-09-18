@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>The Ancestry of Stories — Version 0.2</title>
+<title>The Ancestry of Stories — Version 0.2.2</title>
 <script src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
 <style>
 :root{--bg:#0d1016;--panel:#151a23;--line:#303847;--text:#eee9df;--muted:#aab2c0;--gold:#d8b36d;--blue:#8fb7db;--purple:#ae93cf;--green:#85b89f;--coral:#d58f79;--teal:#76b8ad}
@@ -36,7 +36,7 @@ input,select,button{font:inherit}input,select{width:100%;background:#0e131b;colo
 </style>
 </head>
 <body>
-<header><div class="brand">The Ancestry of Stories</div><div class="pill">VERSION 0.2</div><div class="note">World → person → work, with evidence, mechanism, abstraction, and research coverage kept visible.</div></header>
+<header><div class="brand">The Ancestry of Stories</div><div class="pill">VERSION 0.2.2</div><div class="note">World → person → work, with evidence, mechanism, abstraction, and research coverage kept visible.</div></header>
 <div class="layout">
 <aside class="side left">
   <div class="section"><h3>Find</h3><div class="row"><input id="search" class="grow" list="nodes" placeholder="Dark Tower, Achebe, Twain…"><datalist id="nodes"></datalist><button id="go">Go</button></div></div>
@@ -44,7 +44,7 @@ input,select,button{font:inherit}input,select{width:100%;background:#0e131b;colo
     <select id="mode"><option value="network">Whole graph</option><option value="ancestors" selected>Combined ancestry</option><option value="author_formation">Author formation</option><option value="work_formation">Work formation</option><option value="descendants">Descendants</option><option value="example">Example reader shelf</option></select>
     <div class="row"><select id="depth" aria-label="Graph depth"><option>1</option><option selected>2</option><option>3</option><option>4</option></select><button id="apply">Apply</button></div>
   </div>
-  <div class="section"><h3>Focus mechanism</h3><select id="mechanism"><option value="all">All mechanisms — full web</option></select><div class="tiny" style="margin-top:5px">Focus emphasizes one kind of connection without severing mixed-mechanism ancestry paths. Confidence still controls which claims are admitted.</div></div>
+  <div class="section"><h3>Focus mechanism</h3><select id="mechanism"><option value="all">All mechanisms — full web</option></select><div class="tiny" style="margin-top:5px">Focus emphasizes one mechanism and the bridge edges that carry it into the selected author or work. Other ancestry stays readable rather than disappearing. Confidence still controls which claims are admitted.</div></div>
   <div class="section"><h3>Show layers</h3><div class="checks"><label><input class="layer-filter" type="checkbox" value="world" checked>World / environment</label><label><input class="layer-filter" type="checkbox" value="person" checked>Person</label><label><input class="layer-filter" type="checkbox" value="work" checked>Work</label></div></div>
   <div class="section"><h3>Context detail</h3><select id="scopeFilter"><option value="all" selected>All context scales</option><option value="reusable">Reusable context — hide cases/episodes</option><option value="broad">Broad systems / patterns only</option></select><div class="tiny" style="margin-top:5px">Specific events remain distinct from one-person anecdotes. Use this control to collapse biographical detail without deleting it from the model.</div></div>
   <div class="section"><h3>Evidence</h3><select id="confidence"><option value="1">Confidence 1+ — include comparisons</option><option value="2" selected>Confidence 2+</option><option value="3">Confidence 3+</option><option value="4">Confidence 4+</option><option value="5">Confidence 5 only</option></select><label class="small"><input id="review" type="checkbox" checked style="width:auto;margin-top:10px"> include claims awaiting source review</label></div>
@@ -112,7 +112,29 @@ function mechanismOf(e){
 function mechanismLabel(e){const id=mechanismOf(e);return mechanisms[id]?.label||id.replaceAll('_',' ')}
 function allowed(e){if(e.confidence<+document.getElementById('confidence').value)return false;if(!document.getElementById('review').checked&&['review','candidate'].includes(e.status))return false;return true}
 function mechanismFocus(){return document.getElementById('mechanism').value}
-function isFocusedMechanism(e){const m=mechanismFocus();return m==='all'||mechanismOf(e)===m||mechanismOf(e)==='context_hierarchy'}
+function isFocusedMechanism(e){const m=mechanismFocus();return m==='all'||mechanismOf(e)===m}
+function focusBridgeIds(es){
+  const m=mechanismFocus();
+  if(m==='all')return new Set(es.map(e=>e._id));
+  const direct=es.filter(e=>mechanismOf(e)===m);
+  const bridge=new Set(direct.map(e=>e._id));
+  const out=new Map(),inc=new Map();
+  for(const e of es){if(!out.has(e.source))out.set(e.source,[]);out.get(e.source).push(e);if(!inc.has(e.target))inc.set(e.target,[]);inc.get(e.target).push(e)}
+  const mode=document.getElementById('mode').value;
+  const addShortest=(start,goal,adj,nextNode)=>{
+    if(start===goal)return;
+    const q=[start],prev=new Map([[start,null]]);
+    while(q.length){const cur=q.shift();if(cur===goal)break;for(const e of adj.get(cur)||[]){const nx=nextNode(e);if(prev.has(nx))continue;prev.set(nx,{node:cur,e});q.push(nx)}}
+    if(!prev.has(goal))return;
+    for(let c=goal;c!==start;){const p=prev.get(c);bridge.add(p.e._id);c=p.node}
+  };
+  if(mode==='descendants'){
+    for(const e of direct)addShortest(selected,e.source,out,x=>x.target);
+  }else if(['ancestors','author_formation','work_formation'].includes(mode)){
+    for(const e of direct)addShortest(e.target,selected,out,x=>x.target);
+  }
+  return bridge;
+}
 function dateLabel(n){const f=y=>y==null?'':(y<0?`${Math.abs(y)} BCE`:`${y}`);if(n.type==='person'&&(n.birth_year!=null||n.death_year!=null))return `${f(n.birth_year)||'?'}–${f(n.death_year)||'present'}`;if(n.active_start!=null||n.active_end!=null)return `active ${f(n.active_start)||'?'}–${f(n.active_end)||'?'}`;if(n.date_start!=null||n.date_end!=null)return `${f(n.date_start)||'?'}–${f(n.date_end)||'?'}`;if(n.year!=null)return n.type==='person'?`reference date ${f(n.year)}`:f(n.year);return ''}
 function coverageFor(id){const d=G.coverage.default||{status:'unassessed',source_environment:'unknown',gaps:['Structured coverage review has not yet been completed.']};return {...d,...(G.coverage.nodes?.[id]||{})}}
 function coverageCard(id){const c=coverageFor(id);const status=(G.coverage.status_values?.[c.status]||c.status);const env=(G.coverage.source_environment_values?.[c.source_environment]||c.source_environment);const dims=c.dimensions?Object.entries(c.dimensions).map(([k,v])=>`<span class="badge coverage-badge">${k.replaceAll('_',' ')}: ${v.replaceAll('_',' ')}</span>`).join(''):'';const gaps=(c.gaps||[]).slice(0,4).map(x=>`<li>${x}</li>`).join('');return `<div class="coverage"><strong>Research state: ${c.status}</strong> · source environment: ${c.source_environment}<div class="tiny" style="margin-top:4px">${status} ${env}</div>${dims?`<div class="coverage-grid">${dims}</div>`:''}${gaps?`<ul>${gaps}</ul>`:''}<div class="tiny" style="margin-top:6px">Coverage describes this project's research, not cultural importance.</div></div>`}
@@ -205,9 +227,9 @@ function projectedEdges(keep){
 }
 function edgeVisual(e){const m=mechanismOf(e),sequence=e.relation==='series_sequence';const table={textual_transmission:{color:'#77849b',dashes:false},formal_genre_inheritance:{color:'#9b88ba',dashes:false},lived_experience:{color:'#85b89f',dashes:[3,5]},historical_social_context:{color:'#6e9e85',dashes:[3,5]},intellectual_social_formation:{color:'#ae93cf',dashes:[8,5]},authorship_publication:{color:'#76b8ad',dashes:sequence?[2,5]:[8,5]},reaction_against:{color:'#d58f79',dashes:false},context_hierarchy:{color:'#d8b36d',dashes:[2,6]},comparison:{color:'#8b8f98',dashes:[14,8]},other:{color:'#6c7890',dashes:false}};return table[m]||table.other}
 function render(ids=null){
-  const ns=G.nodes.filter(n=>(!ids||ids.has(n.id))&&nodeAllowed(n.id,selected));if(M.has(selected)&&!ns.some(n=>n.id===selected))ns.push(M.get(selected));const keep=new Set(ns.map(n=>n.id));const es=projectedEdges(keep);const status=document.getElementById('status');status.textContent=`Laying out ${ns.length} nodes…`;
+  const ns=G.nodes.filter(n=>(!ids||ids.has(n.id))&&nodeAllowed(n.id,selected));if(M.has(selected)&&!ns.some(n=>n.id===selected))ns.push(M.get(selected));const keep=new Set(ns.map(n=>n.id));const es=projectedEdges(keep),bridgeIds=focusBridgeIds(es);const status=document.getElementById('status');status.textContent=`Laying out ${ns.length} nodes…`;
   const nodes=new vis.DataSet(ns.map(n=>{const c=coverageFor(n.id),thin=['unassessed','seed'].includes(c.status);return {id:n.id,label:n.label,shape:n.type==='work'?'box':n.type==='person'?'dot':'ellipse',color:{background:styles[n.type],border:'#d8dce5'},font:{color:n.type==='person'?'#dce8f5':'#151515',size:11,strokeWidth:n.type==='person'?4:0,strokeColor:'#0d1016'},borderWidth:n.personal_seed?3:1,margin:7,shapeProperties:{borderDashes:thin?[4,4]:false},title:`${layerOf(n)} layer${n.scope?` · ${n.scope} scope`:''}\nresearch: ${c.status} · source environment: ${c.source_environment}`}}));
-  const edges=new vis.DataSet(es.map(e=>{const v=edgeVisual(e),comparison=mechanismOf(e)==='comparison',focused=isFocusedMechanism(e),focusActive=mechanismFocus()!=='all';return {id:e._id,from:e.source,to:e.target,arrows:comparison?'':'to',dashes:v.dashes,width:focused?(.6+e.confidence*.34):.55,chosen:false,selectionWidth:0,hoverWidth:0,color:{color:v.color,opacity:focusActive?(focused?(.42+.1*e.confidence):.09):(.38+.1*e.confidence)},title:`${relationNames[e.relation]||e.relation}\n${mechanismLabel(e)}\nconfidence ${e.confidence}\n${e.note}`}}));
+  const edges=new vis.DataSet(es.map(e=>{const v=edgeVisual(e),comparison=mechanismOf(e)==='comparison',focusActive=mechanismFocus()!=='all',directFocus=isFocusedMechanism(e),bridgeFocus=bridgeIds.has(e._id);let opacity=.38+.1*e.confidence,width=.6+e.confidence*.34;if(focusActive){if(directFocus){opacity=.78+.04*e.confidence;width=1.15+e.confidence*.42}else if(bridgeFocus){opacity=.48+.04*e.confidence;width=.9+e.confidence*.28}else{opacity=.22+.018*e.confidence;width=.65+e.confidence*.13}}return {id:e._id,from:e.source,to:e.target,arrows:comparison?'':'to',dashes:v.dashes,width,chosen:false,selectionWidth:0,hoverWidth:0,color:{color:v.color,opacity},title:`${relationNames[e.relation]||e.relation}\n${mechanismLabel(e)}\nconfidence ${e.confidence}\n${e.note}`}}));
   if(network)network.destroy();network=new vis.Network(document.getElementById('network'),{nodes,edges},{interaction:{hover:true,navigationButtons:true},physics:{enabled:true,solver:'forceAtlas2Based',forceAtlas2Based:{gravitationalConstant:-45,centralGravity:.008,springLength:130,springConstant:.04},stabilization:{enabled:true,iterations:190,fit:true}}});network.on('selectNode',p=>detail(p.nodes[0]));network.once('stabilizationIterationsDone',()=>{network.setOptions({physics:false});network.fit({animation:{duration:250,easingFunction:'easeInOutQuad'}});if(keep.has(selected))network.selectNodes([selected]);status.textContent=`${ns.length} nodes · ${es.length} visible edges · ${manifest.version}${mechanismFocus()!=='all'?' · focus: '+(mechanisms[mechanismFocus()]?.label||mechanismFocus()):''}`});
 }
 function apply(){const mode=document.getElementById('mode').value,depth=+document.getElementById('depth').value;const ids=idsForMode(mode,depth);render(ids);detail(selected)}

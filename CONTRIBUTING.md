@@ -67,6 +67,8 @@ Otherwise keep the fact in the edge evidence or as a narrower case beneath a bro
 
 Do not let the graph become a biography database by turning every travel episode, job, town, relative, or anecdote into a universal conceptual node.
 
+Name World/context nodes for the shared external phenomenon, not for the creator who encountered it. Put the creator-specific encounter on the edge and in the side dossier. For example: **Klondike Gold Rush → Jack London**, with London's Yukon journey explained in the relationship evidence—not a context node called “Klondike Gold Rush / London’s Yukon journey.”
+
 ## Person versus work
 
 Do not assume that because an author experienced X, X therefore caused Work Y.

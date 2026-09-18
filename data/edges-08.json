@@ -121,15 +121,17 @@
     "status": "verified"
   },
   {
-    "source": "marquez_childhood_storytelling",
+    "source": "household_storytelling",
     "target": "garcia_marquez_person",
-    "relation": "formation_context",
+    "relation": "family_storytelling_formation",
     "confidence": 5,
     "evidence": "author interview",
-    "note": "García Márquez traced his storytelling impulse to an extraordinary childhood among imaginative and superstitious people and specifically remembered his grandmother telling frightening stories matter-of-factly.",
+    "note": "García Márquez traced much of his storytelling imagination to a childhood household filled with family memory, superstition, frightening stories, and matter-of-fact narration, especially from his grandmother. The broad node represents intergenerational storytelling; this edge preserves his specific household experience.",
     "source_url": "https://www.unesco.org/en/articles/interview-gabriel-garcia-marquez-0",
     "source_label": "UNESCO — Interview with Gabriel García Márquez",
-    "status": "verified"
+    "status": "verified",
+    "mechanism": "lived_experience",
+    "evidence_class": "explicit"
   },
   {
     "source": "banana_massacre_1928",
@@ -152,5 +154,18 @@
     "source_url": "https://researchers.westernsydney.edu.au/en/publications/one-hundred-years-of-solitude-or-solidarity-colombias-forgotten-r/",
     "source_label": "Western Sydney University — Colombia's historical violence and One Hundred Years of Solitude",
     "status": "review"
+  },
+  {
+    "source": "household_storytelling",
+    "target": "achebe",
+    "relation": "family_storytelling_formation",
+    "mechanism": "lived_experience",
+    "evidence_class": "explicit",
+    "confidence": 5,
+    "evidence": "creator interview",
+    "note": "Achebe described stories told by his mother, elder sister, family visitors, and village life as part of his early imaginative world. The broad node represents a recurring transmission setting; the specific Igbo forms and language remain separately represented through Igbo oral tradition.",
+    "source_url": "https://www.theparisreview.org/interviews/1720/the-art-of-fiction-no-139-chinua-achebe",
+    "source_label": "The Paris Review — Chinua Achebe, The Art of Fiction",
+    "status": "verified"
   }
 ]

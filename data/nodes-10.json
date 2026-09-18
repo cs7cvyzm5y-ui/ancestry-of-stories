@@ -180,9 +180,10 @@
     "culture": "Germany / World War II",
     "description": "The Allied bombing of Dresden in February 1945, which destroyed much of the city and killed large numbers of civilians during the final months of World War II. The event has an independent historical life beyond any one writer; Vonnegut's personal survival of the bombing is represented on the relationship linking this event to him.",
     "tags": [
-      "war",
-      "dresden",
-      "trauma"
+      "history",
+      "world-war-ii",
+      "civilian-bombing",
+      "dresden"
     ],
     "personal_seed": false,
     "metrics": {},

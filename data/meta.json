@@ -1,8 +1,8 @@
 {
-  "title": "The Ancestry of Stories — Version 0.2",
-  "version": "0.2.3",
-  "scope": "Prototype knowledge graph of creative transmission across world/environment, person/formation, and work/expression layers.",
-  "method_note": "Edges distinguish mechanism from confidence. The graph separates textual transmission, lived experience, historical/social context, intellectual/social formation, formal inheritance, authorship/publication, reaction against, context hierarchy, and comparison.",
+  "title": "The Ancestry of Stories — Version 0.3",
+  "version": "0.3.0",
+  "scope": "Prototype knowledge graph of cultural and creative transmission across world/environment, person/formation, work/expression, and the mediators that carry material between them.",
+  "method_note": "Version 0.3 explicitly tests direct creator influence against mediated transmission through works, translations, publishing institutions, traditions, media forms, and historical systems.",
   "limitations": [
     "Curated seed corpus, not a representative sample of world literature.",
     "Graph density reflects research attention and source accessibility as well as represented relationships; it must not be interpreted as cultural importance.",

@@ -174,33 +174,36 @@
   },
   {
     "id": "dresden_bombing",
-    "label": "Bombing of Dresden / Vonnegut POW experience",
+    "label": "Bombing of Dresden",
     "type": "context",
     "year": 1945,
     "culture": "Germany / World War II",
-    "description": "Allied bombing of Dresden in February 1945, survived by POW Kurt Vonnegut in an underground meat locker at the slaughterhouse where he was held; he later worked amid the destroyed city and repeatedly returned to the event in writing.",
+    "description": "The Allied bombing of Dresden in February 1945, which destroyed much of the city and killed large numbers of civilians during the final months of World War II. The event has an independent historical life beyond any one writer; Vonnegut's personal survival of the bombing is represented on the relationship linking this event to him.",
     "tags": [
       "war",
       "dresden",
       "trauma"
     ],
     "personal_seed": false,
-    "metrics": {}
+    "metrics": {},
+    "layer": "world",
+    "scope": "event"
   },
   {
-    "id": "mary_ohare_intervention",
-    "label": "Mary O'Hare's antiwar challenge to Vonnegut",
-    "type": "context",
+    "id": "mary_ohare",
+    "label": "Mary O'Hare",
+    "type": "person",
     "year": 1960,
     "culture": "American / composition history",
-    "description": "During Vonnegut's long struggle to write his Dresden novel, Mary O'Hare objected to treating the young soldiers as glamorous movie-war men and warned that such a story could make war look good. Vonnegut later described this as an important clue to the book's approach.",
+    "description": "Mary O'Hare, whose criticism of Kurt Vonnegut's early framing of his Dresden book challenged him not to glamorize the young soldiers or make war look attractive. Vonnegut later described her intervention as an important clue to the form and antiwar stance of Slaughterhouse-Five.",
     "tags": [
-      "composition",
+      "creative-feedback",
       "antiwar",
-      "biography"
+      "composition"
     ],
     "personal_seed": false,
-    "metrics": {}
+    "metrics": {},
+    "layer": "person"
   },
   {
     "id": "arthur_conan_doyle",

@@ -1,5 +1,5 @@
 {
-  "version": "0.2.3",
+  "version": "0.3.0",
   "meta": "meta.json",
   "ontology": "ontology.json",
   "coverage": "research-coverage.json",
@@ -15,7 +15,9 @@
     "nodes-09.json",
     "nodes-10.json",
     "nodes-11.json",
-    "nodes-12.json"
+    "nodes-12.json",
+    "nodes-13.json",
+    "nodes-14.json"
   ],
   "edges": [
     "edges-01.json",
@@ -29,10 +31,12 @@
     "edges-09.json",
     "edges-10.json",
     "edges-11.json",
-    "edges-12.json"
+    "edges-12.json",
+    "edges-13.json",
+    "edges-14.json"
   ],
   "counts": {
-    "nodes": 206,
-    "edges": 241
+    "nodes": 232,
+    "edges": 284
   }
 }

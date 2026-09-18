@@ -1,1 +1,246 @@
-{"version":"0.2.0","purpose":"Expose the state and accessibility of this project's research separately from graph density or cultural importance.","status_values":{"unassessed":"No structured dossier review has been completed.","seed":"Starter claims exist, but the dossier should be treated as preliminary.","partial":"Several important dimensions have been researched, with known gaps remaining.","substantial":"Multiple dimensions and source types have been reviewed. This still does not imply completeness."},"source_environment_values":{"digitally_rich":"Many strong sources are accessible in languages and formats currently covered by the project.","mixed":"Strong sources exist, but important languages, archives, formats, oral/community sources, or perspectives remain under-reviewed.","limited":"Current project access is weak; targeted translated, community, oral, specialist, or non-digital research is needed.","unknown":"Source environment has not yet been assessed.","not_applicable":"Framework or abstraction node rather than a creator/work dossier."},"dimension_values":{"not_yet_reviewed":"Not yet reviewed systematically.","seed":"Initial material only.","partial":"Some meaningful material reviewed; significant gaps remain.","researched":"Reviewed across multiple credible sources for the current project stage.","not_applicable":"Dimension is not applicable."},"default":{"status":"unassessed","source_environment":"unknown","gaps":["Structured coverage review has not yet been completed."]},"nodes":{"hemingway":{"status":"substantial","source_environment":"digitally_rich","dimensions":{"documented_reading":"partial","profession":"researched","war_and_lived_events":"researched","creative_circle":"researched","major_works":"partial","non_english_sources":"not_yet_reviewed"},"gaps":["Spanish-, French-, and Italian-language scholarship is not yet systematically reviewed.","Family, class, religion, and place formation need a more deliberate source pass.","Current graph coverage favors well-digitized biographical and Anglophone literary sources."]},"poe":{"status":"substantial","source_environment":"digitally_rich","dimensions":{"documented_reading":"researched","genre_ancestry":"researched","biography":"partial","major_works":"partial","transatlantic_sources":"partial"},"gaps":["French reception and translation pathways need deeper review.","Current coverage emphasizes canonical Gothic and Romantic scholarship."]},"mark_twain_person":{"status":"partial","source_environment":"digitally_rich","dimensions":{"profession":"researched","regional_history":"partial","major_works":"partial","documented_reading":"seed","minority_and_community_perspectives":"not_yet_reviewed"},"gaps":["Western and Mississippi contexts should include more Indigenous, Black, Mexican, and working-class perspectives rather than only Twain-centered archives.","Documented reading and international intellectual influences remain thin.","Nevada experience should be interpreted through reusable frontier/resource-boom structures rather than treated as a standalone universal category."]},"jack_london_person":{"status":"partial","source_environment":"digitally_rich","dimensions":{"klondike_experience":"researched","profession_and_class":"seed","documented_reading":"not_yet_reviewed","political_intellectual_context":"not_yet_reviewed","major_works":"partial"},"gaps":["London's socialism, labor experience, maritime work, racial views, and reading require a dedicated dossier pass.","Klondike research should include First Nations and Alaska Native perspectives on the rush and its consequences."]},"steinbeck":{"status":"partial","source_environment":"digitally_rich","dimensions":{"salinas_region":"researched","labor_and_agriculture":"partial","family_history":"partial","documented_reading":"not_yet_reviewed","major_works":"partial"},"gaps":["Mexican, Filipino, Chinese, Indigenous, and migrant-worker perspectives need stronger representation in the regional context.","Steinbeck's broader intellectual and scientific formation remains under-modeled."]},"achebe":{"status":"partial","source_environment":"mixed","dimensions":{"igbo_language_and_oral_tradition":"partial","colonial_history":"partial","education_and_religion":"seed","documented_reading":"seed","nigerian_and_african_scholarship":"not_yet_reviewed"},"gaps":["The current dossier relies too heavily on English-language institutional sources.","Igbo-language, Nigerian, and African scholarship should be deliberately prioritized.","Oral tradition should not be represented only through later literary scholarship or external archives."]},"things_fall_apart":{"status":"partial","source_environment":"mixed","dimensions":{"title_source":"researched","igbo_language_and_oral_form":"partial","colonial_history":"partial","missionary_context":"seed","reception_and_translation":"not_yet_reviewed"},"gaps":["More community- and Africa-based scholarship is needed.","The novel's relationship to missionary education, English literary curriculum, and translation should be expanded."]},"igbo_oral_tradition":{"status":"seed","source_environment":"limited","dimensions":{"community_sources":"not_yet_reviewed","oral_performance":"seed","language":"seed","external_scholarship":"partial"},"gaps":["Current representation is an abstraction and must not substitute for distinct Igbo genres, performers, communities, and contexts.","Community-authored and Igbo-language sources are a priority.","Variation across oral performance should be treated as part of the tradition, not noise."]},"garcia_marquez_person":{"status":"partial","source_environment":"mixed","dimensions":{"family_storytelling":"researched","colombian_history":"partial","journalism":"seed","documented_reading":"not_yet_reviewed","spanish_language_scholarship":"not_yet_reviewed"},"gaps":["Spanish-language scholarship and Colombian/Caribbean sources need a dedicated pass.","Current historical context is stronger than the literary and journalistic formation network."]},"hundred_years_solitude":{"status":"partial","source_environment":"mixed","dimensions":{"colombian_history":"partial","family_storytelling":"partial","literary_sources":"seed","caribbean_context":"not_yet_reviewed","spanish_language_scholarship":"not_yet_reviewed"},"gaps":["The work's literary ancestry remains underdeveloped relative to its historical context.","Caribbean Colombian and Latin American scholarship should be prioritized."]},"dark_tower":{"status":"substantial","source_environment":"digitally_rich","dimensions":{"explicit_literary_sources":"researched","publication_history":"researched","genre_and_media_sources":"partial","internal_king_network":"partial","historical_context":"seed"},"gaps":["Explicit songs, quotations, character crossovers, and self-insertion need systematic indexing.","The current dossier is unusually dense and should not become the implicit standard by which less-documented traditions are judged."]},"dungeon_carl":{"status":"partial","source_environment":"digitally_rich","dimensions":{"games_and_mmorpgs":"researched","reality_media":"partial","explicit_references":"partial","author_biography":"seed"},"gaps":["The Running Man relationship needs a cleaner primary-source or direct-text citation before promotion to explicit influence.","Text-level references and broader game/media ancestry need systematic review."]},"grimm_tales":{"status":"partial","source_environment":"mixed","dimensions":{"collection_history":"researched","oral_sources":"partial","editorial_revision":"partial","specific_tale_provenance":"not_yet_reviewed"},"gaps":["The printed Grimms collection is a mediated editorial object and should not stand in for a single homogeneous German oral tradition.","Specific tellers, regional sources, literary borrowings, and later editorial reshaping need more representation."]},"western_tradition":{"status":"seed","source_environment":"mixed","dimensions":{"genre_history":"partial","cowboy_labor_history":"seed","indigenous_perspectives":"not_yet_reviewed","black_and_mexican_west":"not_yet_reviewed","film_transmission":"seed"},"gaps":["The genre should not inherit a heroic white-cowboy model by default.","Vaquero, Black cowboy, Indigenous, Mexican, settler, labor, and film histories need deliberate integration.","Historical frontier and later frontier mythmaking should remain distinct."]}}}
+{
+  "version": "0.2.0",
+  "purpose": "Expose the state and accessibility of this project's research separately from graph density or cultural importance.",
+  "status_values": {
+    "unassessed": "No structured dossier review has been completed.",
+    "seed": "Starter claims exist, but the dossier should be treated as preliminary.",
+    "partial": "Several important dimensions have been researched, with known gaps remaining.",
+    "substantial": "Multiple dimensions and source types have been reviewed. This still does not imply completeness."
+  },
+  "source_environment_values": {
+    "digitally_rich": "Many strong sources are accessible in languages and formats currently covered by the project.",
+    "mixed": "Strong sources exist, but important languages, archives, formats, oral/community sources, or perspectives remain under-reviewed.",
+    "limited": "Current project access is weak; targeted translated, community, oral, specialist, or non-digital research is needed.",
+    "unknown": "Source environment has not yet been assessed.",
+    "not_applicable": "Framework or abstraction node rather than a creator/work dossier."
+  },
+  "dimension_values": {
+    "not_yet_reviewed": "Not yet reviewed systematically.",
+    "seed": "Initial material only.",
+    "partial": "Some meaningful material reviewed; significant gaps remain.",
+    "researched": "Reviewed across multiple credible sources for the current project stage.",
+    "not_applicable": "Dimension is not applicable."
+  },
+  "default": {
+    "status": "unassessed",
+    "source_environment": "unknown",
+    "gaps": [
+      "Structured coverage review has not yet been completed."
+    ]
+  },
+  "nodes": {
+    "hemingway": {
+      "status": "substantial",
+      "source_environment": "digitally_rich",
+      "dimensions": {
+        "documented_reading": "partial",
+        "profession": "researched",
+        "war_and_lived_events": "researched",
+        "creative_circle": "researched",
+        "major_works": "partial",
+        "non_english_sources": "not_yet_reviewed"
+      },
+      "gaps": [
+        "Spanish-, French-, and Italian-language scholarship is not yet systematically reviewed.",
+        "Family, class, religion, and place formation need a more deliberate source pass.",
+        "Current graph coverage favors well-digitized biographical and Anglophone literary sources."
+      ]
+    },
+    "poe": {
+      "status": "substantial",
+      "source_environment": "digitally_rich",
+      "dimensions": {
+        "documented_reading": "researched",
+        "genre_ancestry": "researched",
+        "biography": "partial",
+        "major_works": "partial",
+        "transatlantic_sources": "partial"
+      },
+      "gaps": [
+        "French reception and translation pathways need deeper review.",
+        "Current coverage emphasizes canonical Gothic and Romantic scholarship."
+      ]
+    },
+    "mark_twain_person": {
+      "status": "partial",
+      "source_environment": "digitally_rich",
+      "dimensions": {
+        "profession": "researched",
+        "regional_history": "partial",
+        "major_works": "partial",
+        "documented_reading": "seed",
+        "minority_and_community_perspectives": "not_yet_reviewed"
+      },
+      "gaps": [
+        "Western and Mississippi contexts should include more Indigenous, Black, Mexican, and working-class perspectives rather than only Twain-centered archives.",
+        "Documented reading and international intellectual influences remain thin.",
+        "Nevada experience should be interpreted through reusable frontier/resource-boom structures rather than treated as a standalone universal category."
+      ]
+    },
+    "jack_london_person": {
+      "status": "partial",
+      "source_environment": "digitally_rich",
+      "dimensions": {
+        "klondike_experience": "researched",
+        "profession_and_class": "seed",
+        "documented_reading": "not_yet_reviewed",
+        "political_intellectual_context": "not_yet_reviewed",
+        "major_works": "partial"
+      },
+      "gaps": [
+        "London's socialism, labor experience, maritime work, racial views, and reading require a dedicated dossier pass.",
+        "Klondike research should include First Nations and Alaska Native perspectives on the rush and its consequences."
+      ]
+    },
+    "steinbeck": {
+      "status": "partial",
+      "source_environment": "digitally_rich",
+      "dimensions": {
+        "salinas_region": "researched",
+        "labor_and_agriculture": "partial",
+        "family_history": "partial",
+        "documented_reading": "not_yet_reviewed",
+        "major_works": "partial"
+      },
+      "gaps": [
+        "Mexican, Filipino, Chinese, Indigenous, and migrant-worker perspectives need stronger representation in the regional context.",
+        "Steinbeck's broader intellectual and scientific formation remains under-modeled."
+      ]
+    },
+    "achebe": {
+      "status": "partial",
+      "source_environment": "mixed",
+      "dimensions": {
+        "igbo_language_and_oral_tradition": "partial",
+        "colonial_history": "partial",
+        "education_and_religion": "seed",
+        "documented_reading": "seed",
+        "nigerian_and_african_scholarship": "not_yet_reviewed"
+      },
+      "gaps": [
+        "The current dossier relies too heavily on English-language institutional sources.",
+        "Igbo-language, Nigerian, and African scholarship should be deliberately prioritized.",
+        "Oral tradition should not be represented only through later literary scholarship or external archives."
+      ]
+    },
+    "things_fall_apart": {
+      "status": "partial",
+      "source_environment": "mixed",
+      "dimensions": {
+        "title_source": "researched",
+        "igbo_language_and_oral_form": "partial",
+        "colonial_history": "partial",
+        "missionary_context": "seed",
+        "reception_and_translation": "not_yet_reviewed"
+      },
+      "gaps": [
+        "More community- and Africa-based scholarship is needed.",
+        "The novel's relationship to missionary education, English literary curriculum, and translation should be expanded."
+      ]
+    },
+    "igbo_oral_tradition": {
+      "status": "seed",
+      "source_environment": "limited",
+      "dimensions": {
+        "community_sources": "not_yet_reviewed",
+        "oral_performance": "seed",
+        "language": "seed",
+        "external_scholarship": "partial"
+      },
+      "gaps": [
+        "Current representation is an abstraction and must not substitute for distinct Igbo genres, performers, communities, and contexts.",
+        "Community-authored and Igbo-language sources are a priority.",
+        "Variation across oral performance should be treated as part of the tradition, not noise."
+      ]
+    },
+    "garcia_marquez_person": {
+      "status": "partial",
+      "source_environment": "mixed",
+      "dimensions": {
+        "family_storytelling": "researched",
+        "colombian_history": "partial",
+        "journalism": "seed",
+        "documented_reading": "not_yet_reviewed",
+        "spanish_language_scholarship": "not_yet_reviewed"
+      },
+      "gaps": [
+        "Spanish-language scholarship and Colombian/Caribbean sources need a dedicated pass.",
+        "Current historical context is stronger than the literary and journalistic formation network."
+      ]
+    },
+    "dark_tower": {
+      "status": "substantial",
+      "source_environment": "digitally_rich",
+      "dimensions": {
+        "explicit_literary_sources": "researched",
+        "publication_history": "researched",
+        "genre_and_media_sources": "partial",
+        "internal_king_network": "partial",
+        "historical_context": "seed"
+      },
+      "gaps": [
+        "Explicit songs, quotations, character crossovers, and self-insertion need systematic indexing.",
+        "The current dossier is unusually dense and should not become the implicit standard by which less-documented traditions are judged."
+      ]
+    },
+    "dungeon_carl": {
+      "status": "partial",
+      "source_environment": "digitally_rich",
+      "dimensions": {
+        "games_and_mmorpgs": "researched",
+        "reality_media": "partial",
+        "explicit_references": "partial",
+        "author_biography": "seed"
+      },
+      "gaps": [
+        "The Running Man relationship needs a cleaner primary-source or direct-text citation before promotion to explicit influence.",
+        "Text-level references and broader game/media ancestry need systematic review."
+      ]
+    },
+    "grimm_tales": {
+      "status": "partial",
+      "source_environment": "mixed",
+      "dimensions": {
+        "collection_history": "researched",
+        "oral_sources": "partial",
+        "editorial_revision": "partial",
+        "specific_tale_provenance": "not_yet_reviewed"
+      },
+      "gaps": [
+        "The printed Grimms collection is a mediated editorial object and should not stand in for a single homogeneous German oral tradition.",
+        "Specific tellers, regional sources, literary borrowings, and later editorial reshaping need more representation."
+      ]
+    },
+    "western_tradition": {
+      "status": "seed",
+      "source_environment": "mixed",
+      "dimensions": {
+        "genre_history": "partial",
+        "cowboy_labor_history": "seed",
+        "indigenous_perspectives": "not_yet_reviewed",
+        "black_and_mexican_west": "not_yet_reviewed",
+        "film_transmission": "seed"
+      },
+      "gaps": [
+        "The genre should not inherit a heroic white-cowboy model by default.",
+        "Vaquero, Black cowboy, Indigenous, Mexican, settler, labor, and film histories need deliberate integration.",
+        "Historical frontier and later frontier mythmaking should remain distinct."
+      ]
+    },
+    "marquez": {
+      "status": "partial",
+      "source_environment": "mixed",
+      "dimensions": {
+        "colombian_history": "partial",
+        "family_storytelling": "partial",
+        "literary_sources": "seed",
+        "caribbean_context": "not_yet_reviewed",
+        "spanish_language_scholarship": "not_yet_reviewed"
+      },
+      "gaps": [
+        "The work's literary ancestry remains underdeveloped relative to its historical context.",
+        "Caribbean Colombian and Latin American scholarship should be prioritized."
+      ]
+    }
+  }
+}

@@ -69,6 +69,8 @@ Do not let the graph become a biography database by turning every travel episode
 
 Name World/context nodes for the shared external phenomenon, not for the creator who encountered it. Put the creator-specific encounter on the edge and in the side dossier. For example: **Klondike Gold Rush → Jack London**, with London's Yukon journey explained in the relationship evidence—not a context node called “Klondike Gold Rush / London’s Yukon journey.”
 
+Do not turn a specific person into a context node merely because that person matters to only one creator or work. Mentors, editors, teachers, spouses, critics, collaborators, and other documented human interlocutors belong in the Person layer when their intervention is important enough to visualize. Their specificity is legitimate; their node type should describe what they are.
+
 ## Person versus work
 
 Do not assume that because an author experienced X, X therefore caused Work Y.

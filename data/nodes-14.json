@@ -1,0 +1,181 @@
+[
+  {
+    "id": "western_cattle_labor",
+    "label": "Western cattle labor / cowboy work",
+    "type": "context",
+    "layer": "world",
+    "scope": "pattern",
+    "year": 1865,
+    "culture": "American West / borderlands",
+    "description": "Working culture of ranching, cattle handling, trail driving, horse labor, seasonal mobility, and wage work that underlay the later cowboy myth. Historical cowboys were ethnically diverse and their labor was more collective, skilled, and economically constrained than the later solitary gunfighter image suggests.",
+    "tags": [
+      "cowboy",
+      "labor",
+      "cattle",
+      "american-west"
+    ],
+    "personal_seed": false,
+    "metrics": {}
+  },
+  {
+    "id": "vaquero_tradition",
+    "label": "Mexican vaquero cattle & horsemanship tradition",
+    "type": "tradition",
+    "layer": "world",
+    "scope": "tradition",
+    "year": 1700,
+    "culture": "Spanish/Mexican borderlands / North America",
+    "description": "Long-running cattle, horse, roping, riding, equipment, and vocabulary traditions developed in Spanish and Mexican ranching cultures and transmitted northward into U.S. cowboy practice. Terms and techniques later treated as emblematic of the American cowboy often have vaquero roots.",
+    "tags": [
+      "vaquero",
+      "mexican",
+      "ranching",
+      "horsemanship"
+    ],
+    "personal_seed": false,
+    "metrics": {}
+  },
+  {
+    "id": "black_cowboy_labor",
+    "label": "Black cowboy labor in the American West",
+    "type": "context",
+    "layer": "world",
+    "scope": "pattern",
+    "year": 1865,
+    "culture": "United States / American West",
+    "description": "Participation of Black cowboys, ranch workers, drovers, horsemen, and lawmen in western cattle economies after the Civil War. Their historical presence is substantial but was often reduced or omitted in later popular frontier mythology.",
+    "tags": [
+      "black-history",
+      "cowboy",
+      "labor",
+      "american-west"
+    ],
+    "personal_seed": false,
+    "metrics": {}
+  },
+  {
+    "id": "indigenous_cattle_economies",
+    "label": "Indigenous participation in western cattle economies",
+    "type": "context",
+    "layer": "world",
+    "scope": "pattern",
+    "year": 1800,
+    "culture": "Multiple Indigenous nations / American West",
+    "description": "Participation by members of multiple Indigenous nations in ranching, horse culture, cattle work, trade, and related western economies. This is not a single Indigenous tradition; communities had distinct histories and relationships to cattle, land, colonial states, and ranch labor.",
+    "tags": [
+      "indigenous-history",
+      "cattle",
+      "labor",
+      "american-west"
+    ],
+    "personal_seed": false,
+    "metrics": {}
+  },
+  {
+    "id": "indigenous_dispossession_west",
+    "label": "Indigenous dispossession during U.S. westward expansion",
+    "type": "context",
+    "layer": "world",
+    "scope": "system",
+    "year": 1800,
+    "culture": "United States / Indigenous nations of North America",
+    "description": "Treaties, warfare, forced removals, reservation systems, federal land policy, settler encroachment, and other processes through which Indigenous nations lost control of large areas of land during U.S. territorial expansion. This is a central historical structure of the frontier that later popular mythology often minimized or displaced.",
+    "tags": [
+      "indigenous-history",
+      "land",
+      "westward-expansion",
+      "dispossession"
+    ],
+    "personal_seed": false,
+    "metrics": {}
+  },
+  {
+    "id": "dime_novel_frontier",
+    "label": "Dime-novel frontier storytelling",
+    "type": "medium",
+    "layer": "world",
+    "scope": "tradition",
+    "year": 1860,
+    "culture": "United States mass print culture",
+    "description": "Cheap, widely circulated nineteenth-century popular fiction that turned scouts, outlaws, Indian fighters, cowboys, and sensational frontier episodes into repeatable mass-market narrative types. Dime novels helped detach the imagined West from ordinary labor and convert it into portable entertainment.",
+    "tags": [
+      "dime-novel",
+      "mass-media",
+      "western",
+      "frontier-myth"
+    ],
+    "personal_seed": false,
+    "metrics": {}
+  },
+  {
+    "id": "buffalo_bill_wild_west",
+    "label": "Buffalo Bill's Wild West shows",
+    "type": "medium",
+    "layer": "world",
+    "scope": "pattern",
+    "year": 1883,
+    "culture": "United States / transatlantic popular entertainment",
+    "description": "Touring spectacles that staged buffalo hunts, sharpshooting, cavalry scenes, attacks, riding exhibitions, and frontier tableaux for mass audiences in the United States and Europe, converting contested western history into repeatable performance and iconography.",
+    "tags": [
+      "performance",
+      "western",
+      "buffalo-bill",
+      "frontier-myth"
+    ],
+    "personal_seed": false,
+    "metrics": {}
+  },
+  {
+    "id": "game_show_format",
+    "label": "Game-show / elimination spectacle format",
+    "type": "medium",
+    "layer": "world",
+    "scope": "tradition",
+    "year": 1950,
+    "culture": "Broadcast / reality / streaming media",
+    "description": "Media grammar built around contestants, rules, prizes, hosts, audience attention, elimination, escalating rounds, spectacle, and externally imposed incentives. The format predates reality television and can combine with later survival, streaming, and audience-participation conventions.",
+    "tags": [
+      "game-show",
+      "television",
+      "competition",
+      "spectacle"
+    ],
+    "personal_seed": false,
+    "metrics": {}
+  },
+  {
+    "id": "hey_jude",
+    "label": "The Beatles — Hey Jude",
+    "type": "work",
+    "layer": "work",
+    "year": 1968,
+    "culture": "British popular music / global circulation",
+    "description": "Beatles song whose chorus survives as a fragment of cultural memory inside Stephen King's Dark Tower world. The reference is useful because King explicitly used familiar popular culture as a residue from a world adjacent to ours.",
+    "tags": [
+      "music",
+      "beatles",
+      "popular-culture",
+      "dark-tower-reference"
+    ],
+    "personal_seed": false,
+    "metrics": {}
+  },
+  {
+    "id": "late_cold_war_ecological_nuclear_anxiety",
+    "label": "Late-Cold-War nuclear & ecological anxiety",
+    "type": "context",
+    "layer": "world",
+    "scope": "pattern",
+    "year": 1980,
+    "culture": "United States / transnational late twentieth century",
+    "description": "Late-twentieth-century cultural anxiety around nuclear destruction, radiation, environmental degradation, species loss, ozone depletion, and technological power outrunning moral restraint. It is modeled as a broad context, not as a claim that any one issue alone caused a work.",
+    "tags": [
+      "cold-war",
+      "nuclear",
+      "environment",
+      "technology"
+    ],
+    "personal_seed": false,
+    "metrics": {}
+  }
+]

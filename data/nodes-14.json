@@ -177,5 +177,39 @@
     ],
     "personal_seed": false,
     "metrics": {}
+  },
+  {
+    "id": "running_man_film",
+    "label": "The Running Man (1987 film)",
+    "type": "medium",
+    "layer": "work",
+    "year": 1987,
+    "culture": "American film",
+    "description": "Arnold Schwarzenegger dystopian action film built around a lethal televised game show. Matt Dinniman explicitly named the film, alongside Stephen King's/Richard Bachman's original novel, as a major influence on Dungeon Crawler Carl.",
+    "tags": [
+      "film",
+      "dystopia",
+      "game-show",
+      "media-spectacle"
+    ],
+    "personal_seed": false,
+    "metrics": {}
+  },
+  {
+    "id": "hunger_games",
+    "label": "Suzanne Collins — The Hunger Games",
+    "type": "work",
+    "layer": "work",
+    "year": 2008,
+    "culture": "American",
+    "description": "Dystopian novel about coerced televised youth combat, spectacle, state power, audience performance, survival, and resistance. Matt Dinniman explicitly named it among the influences on Dungeon Crawler Carl.",
+    "tags": [
+      "dystopia",
+      "death-game",
+      "media-spectacle",
+      "YA"
+    ],
+    "personal_seed": false,
+    "metrics": {}
   }
 ]

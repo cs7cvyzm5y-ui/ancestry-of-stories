@@ -224,12 +224,12 @@
   {
     "source": "mrs_dalloway",
     "target": "garcia_marquez_person",
-    "relation": "formative_reading",
+    "relation": "explicit_reference",
     "mechanism": "textual_transmission",
     "evidence_class": "explicit",
     "confidence": 5,
     "evidence": "creator interview and biographical record",
-    "note": "García Márquez explicitly preferred Woolf's use of interior monologue after discovering Joyce, and he later used 'Septimus'—the name of a central Mrs Dalloway character—as an early journalistic pseudonym.",
+    "note": "García Márquez used 'Septimus'—the name of a central character in Mrs Dalloway—as an early journalistic pseudonym. This is direct evidence that the specific novel entered his reading and self-fashioning.",
     "source_url": "https://www.fundaciongabo.org/es/institucion/fundador",
     "source_label": "Fundación Gabo — Gabriel García Márquez",
     "status": "verified"
@@ -323,6 +323,32 @@
     "note": "One Hundred Years of Solitude draws from the Caribbean Colombian world García Márquez described as culturally mixed and saturated with oral story, myth, memory, and regional history. Confidence is slightly lower than the person-level edge because his statement describes his novels and formation broadly rather than this work alone.",
     "source_url": "https://www.unesco.org/en/articles/interview-gabriel-garcia-marquez-0",
     "source_label": "UNESCO — Interview with Gabriel García Márquez",
+    "status": "verified"
+  },
+  {
+    "source": "virginia_woolf",
+    "target": "garcia_marquez_person",
+    "relation": "formative_reading",
+    "mechanism": "textual_transmission",
+    "evidence_class": "explicit",
+    "confidence": 5,
+    "evidence": "creator interview",
+    "note": "After learning interior monologue from Ulysses, García Márquez said he later found the technique in Virginia Woolf and preferred her use of it to Joyce's. This is a direct author-level formation claim, separate from the specific Mrs Dalloway reference.",
+    "source_url": "https://www.theparisreview.org/interviews/3196/the-art-of-fiction-no-69-gabriel-garcia-marquez",
+    "source_label": "The Paris Review — Gabriel García Márquez, The Art of Fiction",
+    "status": "verified"
+  },
+  {
+    "source": "things_fall_apart",
+    "target": "ngugi",
+    "relation": "influenced",
+    "mechanism": "textual_transmission",
+    "evidence_class": "explicit",
+    "confidence": 5,
+    "evidence": "Ngũgĩ first-person retrospective",
+    "note": "Ngũgĩ recalled Things Fall Apart being discussed at the 1962 Makerere conference as a model of literary restraint and excellence, and later described it as an inspiring model and Achebe's lasting literary legacy. This is direct work-to-person influence alongside, but distinct from, Achebe's personal editorial support.",
+    "source_url": "https://journals.sagepub.com/doi/10.1177/0021909613506456",
+    "source_label": "Ngũgĩ wa Thiong'o — My Encounters With Chinua Achebe",
     "status": "verified"
   }
 ]

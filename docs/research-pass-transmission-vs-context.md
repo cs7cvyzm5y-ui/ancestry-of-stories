@@ -21,9 +21,13 @@ García Márquez explicitly described reading *The Metamorphosis* as a formative
 Source:
 https://www.theparisreview.org/interviews/3196/the-art-of-fiction-no-69-gabriel-garcia-marquez
 
+**Things Fall Apart → Ngũgĩ wa Thiong'o**
+
+Ngũgĩ recalled *Things Fall Apart* being discussed at the 1962 Makerere conference as a model of literary restraint and excellence and later called it an inspiring model. This is strong work-to-person transmission.
+
 **Chinua Achebe → Ngũgĩ wa Thiong'o**
 
-Ngũgĩ recalled that Achebe read part of the manuscript that became *Weep Not, Child*, offered useful suggestions, and spoke about it to his Heinemann publishers. This is strong person-to-person creative and institutional support.
+In the same first-person account, Ngũgĩ recalled that Achebe read part of the manuscript that became *Weep Not, Child*, offered useful suggestions, and spoke about it to his Heinemann publishers. This is a separate person-to-person creative and institutional relationship.
 
 Source:
 https://journals.sagepub.com/doi/10.1177/0021909613506456

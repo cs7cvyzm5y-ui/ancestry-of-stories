@@ -210,14 +210,14 @@
     "status": "verified"
   },
   {
-    "source": "reality_tv",
-    "target": "game_show_format",
-    "relation": "formal_variant",
+    "source": "game_show_format",
+    "target": "reality_tv",
+    "relation": "formal_lineage",
     "mechanism": "formal_genre_inheritance",
     "evidence_class": "historical_context",
     "confidence": 4,
-    "evidence": "media-form relationship",
-    "note": "Competition reality television elaborates older game-show grammar with surveillance, confessionals, social strategy, elimination, audience attachment, and produced interpersonal drama. The relationship lets DCC's reality-TV resemblance sit beneath a broader explicitly sourced game-show premise rather than carry the whole claim itself.",
+    "evidence": "media-form history / creator interview context",
+    "note": "Competition reality television inherits and elaborates older game-show grammar with surveillance, confessionals, social strategy, elimination, audience attachment, and produced interpersonal drama. This direction preserves chronology: game-show form precedes the later reality-TV variant.",
     "source_url": "https://www.iheart.com/podcast/1119-here-we-go-again-with-kal-300268750/episode/bonus-matt-dinniman-discusses-dungeon-crawler-340228290/",
     "source_label": "iHeart — Matt Dinniman discusses Dungeon Crawler Carl",
     "status": "review"

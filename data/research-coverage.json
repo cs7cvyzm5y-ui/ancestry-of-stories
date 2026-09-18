@@ -1,5 +1,5 @@
 {
-  "version": "0.2.0",
+  "version": "0.3.0",
   "purpose": "Expose the state and accessibility of this project's research separately from graph density or cultural importance.",
   "status_values": {
     "unassessed": "No structured dossier review has been completed.",
@@ -113,14 +113,15 @@
       "dimensions": {
         "igbo_language_and_oral_tradition": "partial",
         "colonial_history": "partial",
-        "education_and_religion": "seed",
-        "documented_reading": "seed",
-        "nigerian_and_african_scholarship": "not_yet_reviewed"
+        "education_and_religion": "partial",
+        "documented_reading": "partial",
+        "nigerian_and_african_scholarship": "partial",
+        "publishing_and_editorial_network": "researched"
       },
       "gaps": [
-        "The current dossier relies too heavily on English-language institutional sources.",
-        "Igbo-language, Nigerian, and African scholarship should be deliberately prioritized.",
-        "Oral tradition should not be represented only through later literary scholarship or external archives."
+        "Igbo-language scholarship and community-authored sources still need a dedicated pass.",
+        "Current African-source coverage is improved but remains uneven across Nigerian institutions and oral/community sources.",
+        "The relationship between missionary upbringing, comparative religion, and later fiction needs more work-specific evidence."
       ]
     },
     "things_fall_apart": {
@@ -129,28 +130,30 @@
       "dimensions": {
         "title_source": "researched",
         "igbo_language_and_oral_form": "partial",
-        "colonial_history": "partial",
-        "missionary_context": "seed",
-        "reception_and_translation": "not_yet_reviewed"
+        "colonial_history": "researched",
+        "missionary_context": "partial",
+        "reception_and_translation": "partial",
+        "colonial_literary_countertradition": "researched"
       },
       "gaps": [
-        "More community- and Africa-based scholarship is needed.",
-        "The novel's relationship to missionary education, English literary curriculum, and translation should be expanded."
+        "Translation and reception outside English-language publishing networks remain underdeveloped.",
+        "More Igbo- and Nigeria-based scholarship is needed on specific oral genres and linguistic choices.",
+        "The graph now distinguishes broad colonial literary representation from the narrower Joyce Cary catalyst, but additional countertexts should be researched."
       ]
     },
     "igbo_oral_tradition": {
       "status": "seed",
       "source_environment": "limited",
       "dimensions": {
-        "community_sources": "not_yet_reviewed",
+        "community_sources": "seed",
         "oral_performance": "seed",
         "language": "seed",
         "external_scholarship": "partial"
       },
       "gaps": [
-        "Current representation is an abstraction and must not substitute for distinct Igbo genres, performers, communities, and contexts.",
-        "Community-authored and Igbo-language sources are a priority.",
-        "Variation across oral performance should be treated as part of the tradition, not noise."
+        "Current representation remains an abstraction and must not substitute for distinct Igbo genres, performers, communities, and contexts.",
+        "Community-authored and Igbo-language sources remain a priority.",
+        "The new household-storytelling node separates a general social transmission setting from specifically Igbo oral forms, but the latter still needs deeper community-grounded research."
       ]
     },
     "garcia_marquez_person": {
@@ -158,14 +161,17 @@
       "source_environment": "mixed",
       "dimensions": {
         "family_storytelling": "researched",
-        "colombian_history": "partial",
-        "journalism": "seed",
-        "documented_reading": "not_yet_reviewed",
-        "spanish_language_scholarship": "not_yet_reviewed"
+        "colombian_history": "researched",
+        "journalism": "researched",
+        "documented_reading": "researched",
+        "spanish_language_scholarship": "partial",
+        "translation_mediators": "researched",
+        "caribbean_context": "researched"
       },
       "gaps": [
-        "Spanish-language scholarship and Colombian/Caribbean sources need a dedicated pass.",
-        "Current historical context is stronger than the literary and journalistic formation network."
+        "Spanish-language scholarship is now represented but still not systematic across Colombian and Caribbean academic sources.",
+        "The Faulkner relationship remains deliberately contested because García Márquez resisted simplistic one-way influence framing.",
+        "More work is needed on Latin American peers, editors, journalism networks, and regional oral traditions beyond autobiographical interviews."
       ]
     },
     "dark_tower": {
@@ -174,12 +180,14 @@
       "dimensions": {
         "explicit_literary_sources": "researched",
         "publication_history": "researched",
-        "genre_and_media_sources": "partial",
+        "genre_and_media_sources": "researched",
         "internal_king_network": "partial",
-        "historical_context": "seed"
+        "historical_context": "partial",
+        "explicit_popular_culture": "partial"
       },
       "gaps": [
-        "Explicit songs, quotations, character crossovers, and self-insertion need systematic indexing.",
+        "Explicit songs, quotations, character crossovers, and self-insertion need systematic indexing beyond the newly modeled Hey Jude example.",
+        "Late-Cold-War ecological/nuclear context is now sourced to King's own framing, but broader historical interpretation should not be inflated into causal claims.",
         "The current dossier is unusually dense and should not become the implicit standard by which less-documented traditions are judged."
       ]
     },
@@ -188,13 +196,15 @@
       "source_environment": "digitally_rich",
       "dimensions": {
         "games_and_mmorpgs": "researched",
-        "reality_media": "partial",
+        "reality_media": "researched",
         "explicit_references": "partial",
-        "author_biography": "seed"
+        "author_biography": "seed",
+        "game_show_form": "researched"
       },
       "gaps": [
-        "The Running Man relationship needs a cleaner primary-source or direct-text citation before promotion to explicit influence.",
-        "Text-level references and broader game/media ancestry need systematic review."
+        "The creator's explicit 'alien game show' premise is now separated from specific Survivor/Running Man comparisons.",
+        "The Running Man relationship still needs a clean primary-source or direct-text citation before any direct-influence edge is added.",
+        "Text-level references and the series' broader internet/streaming/media ancestry need systematic indexing."
       ]
     },
     "grimm_tales": {
@@ -215,31 +225,35 @@
       "status": "seed",
       "source_environment": "mixed",
       "dimensions": {
-        "genre_history": "partial",
-        "cowboy_labor_history": "seed",
-        "indigenous_perspectives": "not_yet_reviewed",
-        "black_and_mexican_west": "not_yet_reviewed",
-        "film_transmission": "seed"
+        "genre_history": "researched",
+        "cowboy_labor_history": "researched",
+        "indigenous_perspectives": "partial",
+        "black_and_mexican_west": "partial",
+        "film_transmission": "researched",
+        "mass_print_and_performance": "researched"
       },
       "gaps": [
-        "The genre should not inherit a heroic white-cowboy model by default.",
-        "Vaquero, Black cowboy, Indigenous, Mexican, settler, labor, and film histories need deliberate integration.",
-        "Historical frontier and later frontier mythmaking should remain distinct."
+        "Indigenous perspectives remain broad and should be replaced or supplemented with nation- and community-specific histories where relevant.",
+        "Mexican vaquero and Black cowboy histories are now structurally upstream, but their treatment still relies heavily on federal/institutional sources.",
+        "Women, Chinese and other immigrant western labor histories, borderlands literature, and Spanish-language sources remain underdeveloped.",
+        "Historical cattle labor, land dispossession, and later mass-media mythmaking should continue to remain distinct."
       ]
     },
     "marquez": {
       "status": "partial",
       "source_environment": "mixed",
       "dimensions": {
-        "colombian_history": "partial",
-        "family_storytelling": "partial",
-        "literary_sources": "seed",
-        "caribbean_context": "not_yet_reviewed",
-        "spanish_language_scholarship": "not_yet_reviewed"
+        "colombian_history": "researched",
+        "family_storytelling": "researched",
+        "literary_sources": "researched",
+        "caribbean_context": "researched",
+        "spanish_language_scholarship": "partial",
+        "translation_mediators": "partial"
       },
       "gaps": [
-        "The work's literary ancestry remains underdeveloped relative to its historical context.",
-        "Caribbean Colombian and Latin American scholarship should be prioritized."
+        "The work's literary ancestry is now substantially richer, but direct work-level evidence should remain distinct from García Márquez's broader formation.",
+        "Spanish-language and Colombian/Caribbean scholarship should continue to expand beyond author interviews.",
+        "Faulkner and broader modernist affinities require continued separation between documented reading, shared technique, and critic-imposed influence."
       ]
     }
   }

@@ -117,19 +117,29 @@ https://www.washingtonpost.com/archive/entertainment/2008/03/09/things-fall-into
 
 ## Media form can be more defensible than a famous comparison
 
-For *Dungeon Crawler Carl*, reader comparisons to *The Running Man*, *Survivor*, and *Squid Game* are intuitively useful, but a clean primary-source statement identifying those specific works as origins has not yet been established.
+For *Dungeon Crawler Carl*, a newer primary-source interview resolves a question that had previously remained uncertain.
 
-Dinniman has, however, described the long-standing seed idea as an **"alien game show."**
+Dinniman describes the long-standing seed idea as simply **"Alien Game Show."** He then explicitly names the Schwarzenegger *Running Man*, the original Richard Bachman/Stephen King novel, *The Hunger Games*, and *Battle Royale* as major later influences. Crucially, he says the original game-show idea existed before he consumed those works.
 
-The graph now represents:
+The graph therefore keeps two different ancestries visible:
 
 ```text
+early "Alien Game Show" premise
+            ↓
 game-show / elimination format
             ↓
 Dungeon Crawler Carl
 ```
 
-while leaving *The Running Man* unconnected until stronger evidence appears.
+and:
+
+```text
+The Running Man (book + film) ─┐
+The Hunger Games                ├→ later creative influence → Dungeon Crawler Carl
+Battle Royale                   ┘
+```
+
+This is stronger than either extreme. The specific works really did influence Dinniman, but they did not originate the core premise.
 
 Source:
 https://www.iheart.com/podcast/1119-here-we-go-again-with-kal-300268750/episode/bonus-matt-dinniman-discusses-dungeon-crawler-340228290/

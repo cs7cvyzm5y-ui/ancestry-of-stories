@@ -1,1 +1,14 @@
-{"title":"The Ancestry of Stories — Version 0.2","version":"0.2.0","scope":"Prototype knowledge graph of creative transmission across world/environment, person/formation, and work/expression layers.","method_note":"Edges distinguish mechanism from confidence. The graph separates textual transmission, lived experience, historical/social context, intellectual/social formation, formal inheritance, authorship/publication, reaction against, context hierarchy, and comparison.","limitations":["Curated seed corpus, not a representative sample of world literature.","Graph density reflects research attention and source accessibility as well as represented relationships; it must not be interpreted as cultural importance.","The project remains Western- and English-language-heavy and is incomplete in non-English scholarship, oral/community sources, translations, and intermediary transmission.","Coverage metadata describes the state of project research, not the richness of a creator or culture.","Edges marked review require stronger or more specific sourcing before publication as authoritative claims.","Approximate dates are used for some traditions and composite ancient works."]}
+{
+  "title": "The Ancestry of Stories — Version 0.2",
+  "version": "0.2.1",
+  "scope": "Prototype knowledge graph of creative transmission across world/environment, person/formation, and work/expression layers.",
+  "method_note": "Edges distinguish mechanism from confidence. The graph separates textual transmission, lived experience, historical/social context, intellectual/social formation, formal inheritance, authorship/publication, reaction against, context hierarchy, and comparison.",
+  "limitations": [
+    "Curated seed corpus, not a representative sample of world literature.",
+    "Graph density reflects research attention and source accessibility as well as represented relationships; it must not be interpreted as cultural importance.",
+    "The project remains Western- and English-language-heavy and is incomplete in non-English scholarship, oral/community sources, translations, and intermediary transmission.",
+    "Coverage metadata describes the state of project research, not the richness of a creator or culture.",
+    "Edges marked review require stronger or more specific sourcing before publication as authoritative claims.",
+    "Approximate dates are used for some traditions and composite ancient works."
+  ]
+}

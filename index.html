@@ -75,7 +75,7 @@ const mechanisms=G.ontology.mechanisms||{};
 const mechanismSelect=document.getElementById('mechanism');
 Object.entries(mechanisms).forEach(([id,x])=>{if(id==='other')return;const o=document.createElement('option');o.value=id;o.textContent=x.label;mechanismSelect.appendChild(o)});
 const datalist=document.getElementById('nodes');G.nodes.slice().sort((a,b)=>a.label.localeCompare(b.label)).forEach(n=>{const o=document.createElement('option');o.value=n.label;datalist.appendChild(o)});
-const relationNames={author_internal_network:'same-author / shared universe',collected_into:'publication history — collected into',series_foundation:'publication history — series foundation',part_of_series:'publication history — part of series',series_sequence:'series sequence — next volume',title_source:'direct title source',created:'authorship',context_hierarchy:'broad context → specific case',historical_social_context:'historical / social context',professional_formation:'professional formation'};
+const relationNames={author_internal_network:'same-author / shared universe',collected_into:'publication history — collected into',series_foundation:'publication history — series foundation',part_of_series:'publication history — part of series',series_sequence:'series sequence — next volume',title_source:'direct title source',created:'authorship',context_hierarchy:'broad context → specific case',collapsed_context_path:'collapsed context path',historical_social_context:'historical / social context',professional_formation:'professional formation'};
 function resolve(s){const q=s.trim().toLowerCase();if(!q)return null;return (G.nodes.find(n=>n.label.toLowerCase()===q)||G.nodes.find(n=>n.label.toLowerCase().includes(q)))?.id||null}
 function layerOf(n){return n.layer||layerByType[n.type]||'world'}
 function enabledLayers(){return new Set([...document.querySelectorAll('.layer-filter:checked')].map(x=>x.value))}
@@ -83,16 +83,30 @@ function layerAllowed(id,root=null){if(id===root)return true;const n=M.get(id);r
 function scopeAllowed(id,root=null){if(id===root)return true;const n=M.get(id);if(!n||layerOf(n)!=='world')return true;const f=document.getElementById('scopeFilter').value,s=n.scope||'unscoped';if(f==='reusable')return !['case','episode'].includes(s);if(f==='broad')return ['system','pattern','tradition'].includes(s);return true}
 function nodeAllowed(id,root=null){return layerAllowed(id,root)&&scopeAllowed(id,root)}
 function mechanismOf(e){
-  if(e.mechanism)return e.mechanism;const r=(e.relation||'').toLowerCase();
+  if(e.mechanism)return e.mechanism;
+  const r=(e.relation||'').toLowerCase();
   if(e.confidence===1||r==='parallel'||r.includes('comparison'))return 'comparison';
   if(/reaction|against|parod|rebut|reverse/.test(r))return 'reaction_against';
   if(/context_hierarchy|specific_case|hierarch/.test(r))return 'context_hierarchy';
-  if(/created|collected_into|series_foundation|part_of_series|series_sequence|author_internal_network|publication|authorship/.test(r))return 'authorship_publication';
-  if(/biographical|autobiographical|lived|war_experience|travel|family_|childhood|composition_trigger|biographical_trigger|formation_context/.test(r))return 'lived_experience';
-  if(/professional|mentor|mentorship|creative_circle|creative_milieu|education|religion|philosoph|editorial_formation|intellectual/.test(r))return 'intellectual_social_formation';
-  if(/historical|setting|geographic|social_context|political|colonial|regional_formation|economic|movement_context/.test(r))return 'historical_social_context';
-  if(/genre|formal|structural|style|source_pool|genre_formation|genre_transmission|transmission_context/.test(r))return 'formal_genre_inheritance';
-  if(/influenc|title_source|literary_model|conceptual|allusion|quotation|adapt|research_source|character_model|mythic_source|explicit_reference/.test(r))return 'textual_transmission';
+
+  const authorship=new Set(['created','authored','collected_into','series_foundation','part_of_series','series_sequence','author_internal_network','created_context']);
+  if(authorship.has(r)||/publication|authorship/.test(r))return 'authorship_publication';
+
+  const lived=new Set(['biographical_context','biographical_trigger','autobiographical_source','war_experience','formation_context','family_formation_context','childhood_context','composition_trigger','biographical_turning_point']);
+  if(lived.has(r)||/biographical|autobiographical|lived|travel|childhood/.test(r))return 'lived_experience';
+
+  const social=new Set(['professional_formation','mentorship','creative_circle','creative_milieu','peer_context','peer_modernism','education','religious_formation','intellectual_formation']);
+  if(social.has(r)||/professional|mentor|creative_circle|creative_milieu|education|religion|philosoph|editorial_formation|intellectual/.test(r))return 'intellectual_social_formation';
+
+  const historical=new Set(['historical_context','historical_setting','historical_geographic_source','geographic_social_context','historical_ideological_context','historical_precondition','context_shaped','inferred_context','countercanon_context','regional_formation_context','movement_context','aesthetic_context']);
+  if(historical.has(r)||/historical|setting|geographic|social_context|political|colonial|regional_formation|economic|movement_context/.test(r))return 'historical_social_context';
+
+  const formal=new Set(['genre_lineage','genre_formation','genre_transmission','formal_model','structural_model','system_lineage','genre_conversation','revises','source_pool','transmission_context']);
+  if(formal.has(r)||/genre|formal|structural|style/.test(r))return 'formal_genre_inheritance';
+
+  const textual=new Set(['influenced','contested_influence','title_source','literary_model','draws_on','allusive_field','read_by_author','studied','indirect_via_author','reworks','adapts','explicit_reference','quotation','research_source','character_model','mythic_source']);
+  if(textual.has(r)||/influenc|title_source|literary_model|conceptual|allusion|quotation|adapt|research_source|character_model|mythic_source|explicit_reference/.test(r))return 'textual_transmission';
+
   return 'other';
 }
 function mechanismLabel(e){const id=mechanismOf(e);return mechanisms[id]?.label||id.replaceAll('_',' ')}
@@ -101,7 +115,29 @@ function dateLabel(n){const f=y=>y==null?'':(y<0?`${Math.abs(y)} BCE`:`${y}`);if
 function coverageFor(id){const d=G.coverage.default||{status:'unassessed',source_environment:'unknown',gaps:['Structured coverage review has not yet been completed.']};return {...d,...(G.coverage.nodes?.[id]||{})}}
 function coverageCard(id){const c=coverageFor(id);const status=(G.coverage.status_values?.[c.status]||c.status);const env=(G.coverage.source_environment_values?.[c.source_environment]||c.source_environment);const dims=c.dimensions?Object.entries(c.dimensions).map(([k,v])=>`<span class="badge coverage-badge">${k.replaceAll('_',' ')}: ${v.replaceAll('_',' ')}</span>`).join(''):'';const gaps=(c.gaps||[]).slice(0,4).map(x=>`<li>${x}</li>`).join('');return `<div class="coverage"><strong>Research state: ${c.status}</strong> · source environment: ${c.source_environment}<div class="tiny" style="margin-top:4px">${status} ${env}</div>${dims?`<div class="coverage-grid">${dims}</div>`:''}${gaps?`<ul>${gaps}</ul>`:''}<div class="tiny" style="margin-top:6px">Coverage describes this project's research, not cultural importance.</div></div>`}
 function edgeAllowedForMode(e,mode){if(!allowed(e))return false;const mech=mechanismOf(e);if(mode==='author_formation'&&mech==='authorship_publication')return false;return true}
-function neighborhood(root,dir,depth,mode='ancestors'){const seen=new Set([root]);let frontier=[root];for(let d=0;d<depth;d++){const next=[];for(const id of frontier){const n=M.get(id);if(id!==root&&['author_formation','work_formation'].includes(mode)&&n?.type==='person')continue;for(const e of (dir==='in'?incoming:outgoing).get(id)||[]){if(!edgeAllowedForMode(e,mode))continue;const x=dir==='in'?e.source:e.target;if(!nodeAllowed(x,root))continue;if(!seen.has(x)){seen.add(x);next.push(x)}}}frontier=next}return seen}
+function neighborhood(root,dir,depth,mode='ancestors'){
+  const shown=new Set([root]);
+  const bestDepth=new Map([[root,0]]);
+  const queue=[{id:root,d:0}];
+  while(queue.length){
+    const {id,d}=queue.shift();
+    const n=M.get(id);
+    if(id!==root&&['author_formation','work_formation'].includes(mode)&&n?.type==='person')continue;
+    for(const e of (dir==='in'?incoming:outgoing).get(id)||[]){
+      if(!edgeAllowedForMode(e,mode))continue;
+      const x=dir==='in'?e.source:e.target;
+      if(!layerAllowed(x,root))continue;
+      const visible=scopeAllowed(x,root);
+      const nd=d+(visible?1:0);
+      if(nd>depth)continue;
+      if(bestDepth.has(x)&&bestDepth.get(x)<=nd)continue;
+      bestDepth.set(x,nd);
+      queue.push({id:x,d:nd});
+      if(visible)shown.add(x);
+    }
+  }
+  return shown;
+}
 function authorOf(workId){return ((incoming.get(workId)||[]).find(e=>M.get(e.source)?.type==='person'&&['created','authored'].includes(e.relation)))?.source||null}
 function unionInto(a,b){for(const x of b)a.add(x);return a}
 function idsForMode(mode,depth){
@@ -114,9 +150,60 @@ function idsForMode(mode,depth){
 }
 function edgeCard(e,dir){const other=M.get(dir==='in'?e.source:e.target);const label=relationNames[e.relation]||e.relation.replaceAll('_',' ');let badge=`<span class="badge mechanism">${mechanismLabel(e)}</span>`;if(e.relation==='author_internal_network')badge+='<span class="badge internal">same author</span>';else if(['collected_into','series_foundation','part_of_series'].includes(e.relation))badge+='<span class="badge internal">publication lineage</span>';else if(e.relation==='series_sequence')badge+='<span class="badge internal">series sequence</span>';else if(e.relation==='created')badge+='<span class="badge internal">authorship</span>';const source=e.source_url?`<div class="source"><a target="_blank" rel="noopener" href="${e.source_url}">${e.source_label||'View source'} ↗</a></div>`:(['review','candidate'].includes(e.status)?'<div class="source">Source: additional review needed.</div>':'');const transform=e.transformation_note?`<div class="evidence-basis"><strong>What changed in transmission:</strong> ${e.transformation_note}</div>`:'';const state=e.status!=='verified'?` <span class="badge review">${e.status}</span>`:'';return `<div class="edge"><strong>${dir==='in'?other.label+' → selected':'selected → '+other.label}</strong><br>${label} · confidence ${e.confidence}${state}<div style="margin-top:4px">${badge}</div><div class="why"><div class="why-title">Why we think this</div><div>${e.note}</div><div class="evidence-basis">Evidence basis: ${e.evidence}${e.evidence_class?` · class: ${e.evidence_class.replaceAll('_',' ')}`:''}</div>${transform}${source}</div></div>`}
 function detail(id){selected=id;const n=M.get(id);if(!n)return;const ins=[...(incoming.get(id)||[])].sort((a,b)=>b.confidence-a.confidence),outs=[...(outgoing.get(id)||[])].sort((a,b)=>b.confidence-a.confidence);const layer=layerOf(n),date=dateLabel(n),scope=n.scope?`<span class="badge scope">scope: ${n.scope}</span>`:'';document.getElementById('detail').innerHTML=`<h2 class="title">${n.label}</h2><div class="meta">${layer} layer · ${n.type}${date?' · '+date:''}${n.culture?' · '+n.culture:''}</div><div class="desc">${n.description}</div><div>${scope}${(n.tags||[]).map(t=>`<span class="badge">${t}</span>`).join('')}</div>${coverageCard(id)}<h3 style="margin-top:16px">Incoming — what sits behind it</h3>${ins.length?ins.map(e=>edgeCard(e,'in')).join(''):'<div class="small">No incoming claims represented yet.</div>'}<h3 style="margin-top:16px">Outgoing — what it feeds</h3>${outs.length?outs.map(e=>edgeCard(e,'out')).join(''):'<div class="small">No outgoing claims represented yet.</div>'}`}
+function projectedEdges(keep){
+  const direct=G.edges.filter(e=>keep.has(e.source)&&keep.has(e.target)&&allowed(e));
+  if(document.getElementById('scopeFilter').value==='all')return direct;
+  const directPairs=new Set(direct.map(e=>e.source+'→'+e.target));
+  const synthetic=[];
+  const mode=document.getElementById('mode').value;
+  let syntheticId=0;
+
+  for(const source of keep){
+    const queue=[{id:source,path:[]}];
+    const visited=new Set([source]);
+    while(queue.length){
+      const cur=queue.shift();
+      if(cur.path.length>=5)continue;
+      for(const e of outgoing.get(cur.id)||[]){
+        if(!edgeAllowedForMode(e,mode))continue;
+        const target=e.target;
+        if(!layerAllowed(target,selected))continue;
+        const path=[...cur.path,e];
+
+        if(keep.has(target)){
+          if(cur.path.length>0&&!directPairs.has(source+'→'+target)){
+            const substantive=[...path].reverse().find(x=>mechanismOf(x)!=='context_hierarchy')||path[path.length-1];
+            const hiddenIds=path.slice(0,-1).map(x=>x.target).filter(id=>!scopeAllowed(id,selected));
+            if(hiddenIds.length){
+              synthetic.push({
+                _id:'collapsed-'+(syntheticId++),
+                source,target,
+                relation:'collapsed_context_path',
+                mechanism:mechanismOf(substantive),
+                confidence:Math.min(...path.map(x=>x.confidence||1)),
+                evidence:'collapsed context hierarchy',
+                note:'Collapsed through hidden context detail: '+hiddenIds.map(id=>M.get(id)?.label||id).join(' → ')+'. Set Context detail to All to inspect the intermediate case.',
+                status:'verified',
+                _synthetic:true
+              });
+              directPairs.add(source+'→'+target);
+            }
+          }
+          continue;
+        }
+
+        if(scopeAllowed(target,selected))continue;
+        if(visited.has(target))continue;
+        visited.add(target);
+        queue.push({id:target,path});
+      }
+    }
+  }
+  return [...direct,...synthetic];
+}
 function edgeVisual(e){const m=mechanismOf(e),sequence=e.relation==='series_sequence';const table={textual_transmission:{color:'#77849b',dashes:false},formal_genre_inheritance:{color:'#9b88ba',dashes:false},lived_experience:{color:'#85b89f',dashes:[3,5]},historical_social_context:{color:'#6e9e85',dashes:[3,5]},intellectual_social_formation:{color:'#ae93cf',dashes:[8,5]},authorship_publication:{color:'#76b8ad',dashes:sequence?[2,5]:[8,5]},reaction_against:{color:'#d58f79',dashes:false},context_hierarchy:{color:'#d8b36d',dashes:[2,6]},comparison:{color:'#8b8f98',dashes:[14,8]},other:{color:'#6c7890',dashes:false}};return table[m]||table.other}
 function render(ids=null){
-  const ns=G.nodes.filter(n=>(!ids||ids.has(n.id))&&nodeAllowed(n.id,selected));if(M.has(selected)&&!ns.some(n=>n.id===selected))ns.push(M.get(selected));const keep=new Set(ns.map(n=>n.id));const es=G.edges.filter(e=>keep.has(e.source)&&keep.has(e.target)&&allowed(e));const status=document.getElementById('status');status.textContent=`Laying out ${ns.length} nodes…`;
+  const ns=G.nodes.filter(n=>(!ids||ids.has(n.id))&&nodeAllowed(n.id,selected));if(M.has(selected)&&!ns.some(n=>n.id===selected))ns.push(M.get(selected));const keep=new Set(ns.map(n=>n.id));const es=projectedEdges(keep);const status=document.getElementById('status');status.textContent=`Laying out ${ns.length} nodes…`;
   const nodes=new vis.DataSet(ns.map(n=>{const c=coverageFor(n.id),thin=['unassessed','seed'].includes(c.status);return {id:n.id,label:n.label,shape:n.type==='work'?'box':n.type==='person'?'dot':'ellipse',color:{background:styles[n.type],border:'#d8dce5'},font:{color:n.type==='person'?'#dce8f5':'#151515',size:11,strokeWidth:n.type==='person'?4:0,strokeColor:'#0d1016'},borderWidth:n.personal_seed?3:1,margin:7,shapeProperties:{borderDashes:thin?[4,4]:false},title:`${layerOf(n)} layer${n.scope?` · ${n.scope} scope`:''}\nresearch: ${c.status} · source environment: ${c.source_environment}`}}));
   const edges=new vis.DataSet(es.map(e=>{const v=edgeVisual(e),comparison=mechanismOf(e)==='comparison';return {id:e._id,from:e.source,to:e.target,arrows:comparison?'':'to',dashes:v.dashes,width:.6+e.confidence*.34,chosen:false,selectionWidth:0,hoverWidth:0,color:{color:v.color,opacity:.38+.1*e.confidence},title:`${relationNames[e.relation]||e.relation}\n${mechanismLabel(e)}\nconfidence ${e.confidence}\n${e.note}`}}));
   if(network)network.destroy();network=new vis.Network(document.getElementById('network'),{nodes,edges},{interaction:{hover:true,navigationButtons:true},physics:{enabled:true,solver:'forceAtlas2Based',forceAtlas2Based:{gravitationalConstant:-45,centralGravity:.008,springLength:130,springConstant:.04},stabilization:{enabled:true,iterations:190,fit:true}}});network.on('selectNode',p=>detail(p.nodes[0]));network.once('stabilizationIterationsDone',()=>{network.setOptions({physics:false});network.fit({animation:{duration:250,easingFunction:'easeInOutQuad'}});if(keep.has(selected))network.selectNodes([selected]);status.textContent=`${ns.length} nodes · ${es.length} visible edges · ${manifest.version}`});

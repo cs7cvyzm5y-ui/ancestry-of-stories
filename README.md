@@ -1,4 +1,4 @@
-# The Ancestry of Stories — Version 0.2
+# The Ancestry of Stories — Version 0.3
 
 A prototype **typed knowledge graph** for exploring how stories, authors, historical systems, lived experience, traditions, professions, institutions, and other media contribute to later creative work.
 
@@ -6,7 +6,7 @@ The project now asks:
 
 > **What had to exist — in the world, in the creator's formation, and in earlier works — for this author or work to take the form it did?**
 
-Version 0.2 is a major model revision built around three layers:
+Version 0.3 builds on the three-layer model and explicitly tests **direct creator influence against mediated cultural transmission**:
 
 ```text
 WORLD / ENVIRONMENT
@@ -18,7 +18,7 @@ WORK / EXPRESSION
 later creators and works
 ```
 
-The arrows do not all mean the same thing. Version 0.2 separates **relationship mechanism** from **confidence**.
+The arrows do not all mean the same thing. The graph separates **relationship mechanism** from **confidence**, and Version 0.3 adds substantially more translation, publishing, historical-substrate, and media-form mediation.
 
 ## Explore
 
@@ -31,7 +31,7 @@ The arrows do not all mean the same thing. Version 0.2 separates **relationship 
 - descendants;
 - evidence-path finding;
 - confidence thresholds;
-- mechanism filters;
+- mechanism focus, with mixed-mechanism bridge paths preserved;
 - world/person/work layer filters;
 - context-detail filters for broad systems versus specific cases;
 - evidence notes under **Why we think this**;
@@ -40,7 +40,7 @@ The arrows do not all mean the same thing. Version 0.2 separates **relationship 
 
 The interface explicitly warns that **graph density is not cultural importance**.
 
-## Version 0.2 model changes
+## Current model
 
 ### World → person → work
 
@@ -122,8 +122,8 @@ ancestry-of-stories/
 │   ├── ontology.json
 │   ├── research-coverage.json
 │   ├── schema.json
-│   ├── nodes-01.json ... nodes-12.json
-│   └── edges-01.json ... edges-12.json
+│   ├── nodes-01.json ... nodes-14.json
+│   └── edges-01.json ... edges-14.json
 ├── docs/
 │   ├── methodology.md
 │   ├── bias-and-coverage.md
@@ -138,10 +138,10 @@ The sharded JSON files remain the canonical editable data.
 
 ## Current corpus
 
-Version 0.2 contains:
+Version 0.3 contains:
 
-- **206 nodes**;
-- **241 relationships**;
+- **232 nodes**;
+- **284 relationships**;
 - literary works and authors;
 - oral and literary traditions;
 - historical events and systems;
@@ -171,7 +171,7 @@ The graph should preserve useful comparison without inventing transmission.
 
 ## Bias and representation
 
-Version 0.2 adds explicit editorial constraints:
+Current editorial constraints include:
 
 - sparse documentation is not weak cultural importance;
 - non-English and community sources should be deliberately sought;
@@ -239,8 +239,14 @@ See [`CONTRIBUTING.md`](CONTRIBUTING.md) and [`docs/methodology.md`](docs/method
 - Original graph metadata, summaries, annotations, and editorial notes: CC BY 4.0.
 - Third-party sources remain under their original rights; the project links rather than reproduces substantial source material.
 
+## Research direction
+
+Version 0.3 preserves direct creator-to-creator influence where it is documented, but also models the channels that often make those relationships intelligible: translations, publishers, editorial networks, educational institutions, oral transmission, labor traditions, mass media, and historical systems.
+
+See [`docs/research-pass-transmission-vs-context.md`](docs/research-pass-transmission-vs-context.md) for the first deliberate comparison of direct influence versus mediated transmission.
+
 ## Status
 
-**Version 0.2.0** is an exploratory research prototype.
+**Version 0.3.0** is an exploratory research prototype.
 
 Its purpose is to make the model falsifiable and inspectable: test it, find where the ontology fails, expose source bias, improve the rules, and then expand the corpus under those rules.

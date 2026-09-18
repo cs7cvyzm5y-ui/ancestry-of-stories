@@ -176,6 +176,8 @@ Prefer a first-class context node when at least one of these is true:
 
 Otherwise keep the detail inside an evidence note or beneath a broader node.
 
+**Label the world, not the biography.** A history/context node should be named for the external event, system, place-based process, or tradition itself. For example, use **Klondike Gold Rush**, not “Klondike Gold Rush / London’s Yukon journey.” London’s participation belongs on the relationship to London and in his person dossier. A one-person episode that lacks independent historical or cultural significance should normally not be a World node at all.
+
 This preserves biography without allowing biography to become the ontology.
 
 ## Mediators matter

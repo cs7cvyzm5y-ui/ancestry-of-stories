@@ -140,8 +140,8 @@ The sharded JSON files remain the canonical editable data.
 
 Version 0.3 contains:
 
-- **232 nodes**;
-- **284 relationships**;
+- **234 nodes**;
+- **289 relationships**;
 - literary works and authors;
 - oral and literary traditions;
 - historical events and systems;

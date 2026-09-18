@@ -1,0 +1,289 @@
+[
+  {
+    "id": "joyce_cary",
+    "label": "Joyce Cary",
+    "type": "person",
+    "layer": "person",
+    "year": null,
+    "birth_year": 1888,
+    "death_year": 1957,
+    "culture": "Anglo-Irish / British",
+    "description": "Novelist and former colonial administrator whose fiction about colonial Nigeria, especially Mister Johnson, became one of the European representations of Africa that Chinua Achebe later discussed critically.",
+    "tags": [
+      "colonial-literature",
+      "nigeria",
+      "novelist"
+    ],
+    "personal_seed": false,
+    "metrics": {}
+  },
+  {
+    "id": "mister_johnson",
+    "label": "Joyce Cary — Mister Johnson",
+    "type": "work",
+    "layer": "work",
+    "year": 1939,
+    "culture": "British / colonial Nigeria",
+    "description": "Novel by Joyce Cary about a Nigerian clerk under British colonial rule. Achebe later described encountering it as a celebrated portrayal of Nigeria that he found superficial and offensive, while also cautioning against reducing his own writing career to a simple reaction to this one book.",
+    "tags": [
+      "colonial-literature",
+      "nigeria",
+      "representation"
+    ],
+    "personal_seed": false,
+    "metrics": {}
+  },
+  {
+    "id": "colonial_adventure_africa",
+    "label": "European colonial Africa-as-other literary tradition",
+    "type": "tradition",
+    "layer": "world",
+    "scope": "tradition",
+    "year": 1880,
+    "culture": "European imperial print culture / representations of Africa",
+    "description": "A broad tradition of European writing that treated African societies primarily through colonial, adventure, missionary, racial, or exoticizing frames. It is modeled as a representational tradition rather than a single homogeneous genre, and individual works vary substantially.",
+    "tags": [
+      "colonial-literature",
+      "representation",
+      "africa",
+      "countercanon"
+    ],
+    "personal_seed": false,
+    "metrics": {}
+  },
+  {
+    "id": "colonial_higher_education_nigeria",
+    "label": "Colonial higher education in British Nigeria",
+    "type": "context",
+    "layer": "world",
+    "scope": "system",
+    "year": 1940,
+    "culture": "British Nigeria",
+    "description": "Late-colonial university education organized through British institutional and curricular structures, including English literary study and examinations tied to British universities. It created access to global literary traditions while also reproducing colonial canons and assumptions.",
+    "tags": [
+      "education",
+      "colonialism",
+      "nigeria",
+      "curriculum"
+    ],
+    "personal_seed": false,
+    "metrics": {}
+  },
+  {
+    "id": "university_college_ibadan",
+    "label": "University College Ibadan (late-colonial period)",
+    "type": "context",
+    "layer": "world",
+    "scope": "case",
+    "year": 1948,
+    "culture": "Ibadan, British Nigeria",
+    "description": "University college established in 1948 in affiliation with the University of London. Achebe studied English, history, and religion there, encountering both European literary curricula and comparative study of African religions during a formative period.",
+    "tags": [
+      "education",
+      "ibadan",
+      "nigeria",
+      "colonial-institution"
+    ],
+    "personal_seed": false,
+    "metrics": {}
+  },
+  {
+    "id": "african_writers_series",
+    "label": "Heinemann African Writers Series",
+    "type": "medium",
+    "layer": "world",
+    "scope": "pattern",
+    "year": 1962,
+    "culture": "African / British publishing network",
+    "description": "Publishing series launched in 1962 to circulate African writing internationally and across African educational markets. Chinua Achebe served as its first editorial adviser and helped identify and support new writers, making the series an institutional mediator rather than merely a list of books.",
+    "tags": [
+      "publishing",
+      "african-literature",
+      "mediation",
+      "circulation"
+    ],
+    "personal_seed": false,
+    "metrics": {}
+  },
+  {
+    "id": "ngugi",
+    "label": "Ngũgĩ wa Thiong'o",
+    "type": "person",
+    "layer": "person",
+    "year": null,
+    "birth_year": 1938,
+    "death_year": 2025,
+    "culture": "Kenyan / Gikuyu",
+    "description": "Kenyan novelist, playwright, essayist, and theorist of language and decolonization. Early in his career, Chinua Achebe read part of the manuscript that became Weep Not, Child, offered suggestions, and spoke to Heinemann about the work.",
+    "tags": [
+      "kenya",
+      "decolonization",
+      "language",
+      "african-literature"
+    ],
+    "personal_seed": false,
+    "metrics": {}
+  },
+  {
+    "id": "weep_not_child",
+    "label": "Ngũgĩ wa Thiong'o — Weep Not, Child",
+    "type": "work",
+    "layer": "work",
+    "year": 1964,
+    "culture": "Kenyan",
+    "description": "Novel of education, family, land, colonial rule, and the Mau Mau emergency. It became an early major novel by an East African writer in the Heinemann African Writers Series.",
+    "tags": [
+      "kenya",
+      "colonialism",
+      "education",
+      "african-writers-series"
+    ],
+    "personal_seed": false,
+    "metrics": {}
+  },
+  {
+    "id": "salas_subirat_ulysses",
+    "label": "Joyce — Ulysses (José Salas Subirat Spanish translation)",
+    "type": "work",
+    "layer": "work",
+    "year": 1945,
+    "culture": "Argentine / Spanish-language translation",
+    "description": "José Salas Subirat's 1945 Buenos Aires translation, the first complete Spanish translation of Ulysses. García Márquez recalled reading the Spanish edition available to him and learning from Joyce's interior monologue despite later criticizing the translation.",
+    "tags": [
+      "translation",
+      "spanish",
+      "ulysses",
+      "mediation"
+    ],
+    "personal_seed": false,
+    "metrics": {}
+  },
+  {
+    "id": "virginia_woolf",
+    "label": "Virginia Woolf",
+    "type": "person",
+    "layer": "person",
+    "year": null,
+    "birth_year": 1882,
+    "death_year": 1941,
+    "culture": "British",
+    "description": "Modernist novelist and essayist whose experiments with consciousness, time, interior monologue, and free indirect style became part of García Márquez's explicitly discussed literary apprenticeship.",
+    "tags": [
+      "modernism",
+      "interior-monologue",
+      "british-literature"
+    ],
+    "personal_seed": false,
+    "metrics": {}
+  },
+  {
+    "id": "mrs_dalloway",
+    "label": "Virginia Woolf — Mrs Dalloway",
+    "type": "work",
+    "layer": "work",
+    "year": 1925,
+    "culture": "British modernism",
+    "description": "Modernist novel structured through shifting consciousness, memory, urban movement, and interiority. García Márquez later used the name Septimus as an early journalistic pseudonym and discussed Woolf's interior-monologue technique approvingly.",
+    "tags": [
+      "modernism",
+      "interiority",
+      "time",
+      "woolf"
+    ],
+    "personal_seed": false,
+    "metrics": {}
+  },
+  {
+    "id": "william_faulkner",
+    "label": "William Faulkner",
+    "type": "person",
+    "layer": "person",
+    "year": null,
+    "birth_year": 1897,
+    "death_year": 1962,
+    "culture": "American / U.S. South",
+    "description": "Modernist novelist whose treatment of family, region, historical memory, nonlinear narration, and invented local geography García Márquez repeatedly discussed, while resisting simplistic claims of one-way influence.",
+    "tags": [
+      "modernism",
+      "american-south",
+      "memory",
+      "region"
+    ],
+    "personal_seed": false,
+    "metrics": {}
+  },
+  {
+    "id": "american_lost_generation_prose",
+    "label": "American modernist / Lost Generation prose",
+    "type": "tradition",
+    "layer": "world",
+    "scope": "tradition",
+    "year": 1920,
+    "culture": "American / transatlantic modernism",
+    "description": "Interwar American prose associated with writers of the Lost Generation and related modernist experimentation. García Márquez explicitly said these writers helped move him away from overly intellectual early stories toward literature more connected to lived reality.",
+    "tags": [
+      "modernism",
+      "lost-generation",
+      "prose",
+      "transatlantic"
+    ],
+    "personal_seed": false,
+    "metrics": {}
+  },
+  {
+    "id": "bogotazo_1948",
+    "label": "Bogotazo (1948)",
+    "type": "context",
+    "layer": "world",
+    "scope": "event",
+    "year": 1948,
+    "culture": "Bogotá / Colombia",
+    "description": "Mass unrest and destruction in Bogotá after the assassination of Liberal leader Jorge Eliécer Gaitán on April 9, 1948. The event became a major rupture in Colombian political life and forms part of the opening phase of the period known as La Violencia.",
+    "tags": [
+      "colombia",
+      "political-violence",
+      "bogota",
+      "history"
+    ],
+    "personal_seed": false,
+    "metrics": {}
+  },
+  {
+    "id": "la_violencia_colombia",
+    "label": "La Violencia in Colombia",
+    "type": "context",
+    "layer": "world",
+    "scope": "system",
+    "year": 1948,
+    "date_start": 1948,
+    "date_end": 1958,
+    "culture": "Colombia",
+    "description": "Period of intense partisan and rural violence in Colombia, conventionally associated with the decade after the 1948 assassination of Jorge Eliécer Gaitán, though its causes and regional chronologies are broader and contested.",
+    "tags": [
+      "colombia",
+      "political-violence",
+      "liberal",
+      "conservative"
+    ],
+    "personal_seed": false,
+    "metrics": {}
+  },
+  {
+    "id": "caribbean_colombian_cultural_world",
+    "label": "Caribbean Colombian cultural synthesis",
+    "type": "tradition",
+    "layer": "world",
+    "scope": "tradition",
+    "year": 1900,
+    "culture": "Caribbean Colombia / wider Caribbean",
+    "description": "Plural Caribbean cultural environment shaped by Indigenous traditions, African diasporic histories, Spanish and Andalusian inheritances, migration, Catholic and popular religious practices, oral storytelling, music, and regional memory. García Márquez explicitly described Caribbean culture as a mixture rather than a single source.",
+    "tags": [
+      "caribbean",
+      "colombia",
+      "cultural-synthesis",
+      "oral-tradition"
+    ],
+    "personal_seed": false,
+    "metrics": {}
+  }
+]

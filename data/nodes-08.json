@@ -6,9 +6,18 @@
     "year": null,
     "culture": "British / Irish-born, Oxford-Cambridge",
     "description": "Writer, scholar, Christian apologist, medievalist, and fantasy author. His long friendship with J. R. R. Tolkien involved sustained discussion of myth, language, theology, and works in progress.",
-    "tags": ["fantasy", "christianity", "inklings", "medievalism"],
+    "tags": [
+      "fantasy",
+      "christianity",
+      "inklings",
+      "medievalism"
+    ],
     "personal_seed": false,
-    "metrics": {"influence_score": 0.0, "betweenness": 0.0, "descendants": 1}
+    "metrics": {
+      "influence_score": 0,
+      "betweenness": 0,
+      "descendants": 1
+    }
   },
   {
     "id": "inklings",
@@ -17,9 +26,17 @@
     "year": 1933,
     "culture": "Oxford literary circle",
     "description": "Informal Oxford circle in which writers including C. S. Lewis and J. R. R. Tolkien read works in progress, criticized one another, and discussed literature, language, myth, theology, and contemporary affairs.",
-    "tags": ["literary-circle", "peer-review", "oxford"],
+    "tags": [
+      "literary-circle",
+      "peer-review",
+      "oxford"
+    ],
     "personal_seed": false,
-    "metrics": {"influence_score": 0.0, "betweenness": 0.0, "descendants": 2}
+    "metrics": {
+      "influence_score": 0,
+      "betweenness": 0,
+      "descendants": 2
+    }
   },
   {
     "id": "achebe",
@@ -28,9 +45,18 @@
     "year": null,
     "culture": "Nigerian / Igbo",
     "description": "Nigerian novelist and essayist whose fiction brought Igbo social life, language rhythms, oral forms, colonial encounter, and African historical perspective into a globally influential English-language literary practice.",
-    "tags": ["nigeria", "igbo", "postcolonial", "oral-tradition"],
+    "tags": [
+      "nigeria",
+      "igbo",
+      "postcolonial",
+      "oral-tradition"
+    ],
     "personal_seed": false,
-    "metrics": {"influence_score": 0.0, "betweenness": 0.0, "descendants": 1}
+    "metrics": {
+      "influence_score": 0,
+      "betweenness": 0,
+      "descendants": 1
+    }
   },
   {
     "id": "yeats_second_coming",
@@ -39,9 +65,18 @@
     "year": 1920,
     "culture": "Irish / British modernism",
     "description": "Yeats poem of historical rupture, cyclical collapse, and ominous transformation; the phrase 'things fall apart' supplied Achebe with the title of his first novel.",
-    "tags": ["poetry", "modernism", "collapse", "title-source"],
+    "tags": [
+      "poetry",
+      "modernism",
+      "collapse",
+      "title-source"
+    ],
     "personal_seed": false,
-    "metrics": {"influence_score": 0.0, "betweenness": 0.0, "descendants": 1}
+    "metrics": {
+      "influence_score": 0,
+      "betweenness": 0,
+      "descendants": 1
+    }
   },
   {
     "id": "igbo_oral_tradition",
@@ -50,9 +85,18 @@
     "year": null,
     "culture": "Igbo / southeastern Nigeria",
     "description": "Storytelling, proverbs, metaphors, speech rhythms, religious concepts, and social vocabulary carried through Igbo language and oral culture; Achebe reworks these resources within English prose.",
-    "tags": ["oral-tradition", "igbo", "language", "proverbs"],
+    "tags": [
+      "oral-tradition",
+      "igbo",
+      "language",
+      "proverbs"
+    ],
     "personal_seed": false,
-    "metrics": {"influence_score": 0.0, "betweenness": 0.0, "descendants": 1}
+    "metrics": {
+      "influence_score": 0,
+      "betweenness": 0,
+      "descendants": 1
+    }
   },
   {
     "id": "british_colonial_nigeria",
@@ -61,9 +105,18 @@
     "year": 1890,
     "culture": "Southeastern Nigeria / British Empire",
     "description": "Late-nineteenth- and early-twentieth-century expansion of British political, missionary, commercial, and administrative power into Igbo communities; the historical collision dramatized in Things Fall Apart.",
-    "tags": ["colonialism", "nigeria", "missionaries", "empire"],
+    "tags": [
+      "colonialism",
+      "nigeria",
+      "missionaries",
+      "empire"
+    ],
     "personal_seed": false,
-    "metrics": {"influence_score": 0.0, "betweenness": 0.0, "descendants": 1}
+    "metrics": {
+      "influence_score": 0,
+      "betweenness": 0,
+      "descendants": 1
+    }
   },
   {
     "id": "garcia_marquez_person",
@@ -72,20 +125,40 @@
     "year": null,
     "culture": "Colombian / Caribbean Latin American",
     "description": "Colombian novelist and journalist whose fiction joins family memory, Caribbean storytelling, political history, journalism, myth, and the extraordinary treated as ordinary.",
-    "tags": ["colombia", "magical-realism", "journalism", "memory"],
+    "tags": [
+      "colombia",
+      "magical-realism",
+      "journalism",
+      "memory"
+    ],
     "personal_seed": false,
-    "metrics": {"influence_score": 0.0, "betweenness": 0.0, "descendants": 1}
+    "metrics": {
+      "influence_score": 0,
+      "betweenness": 0,
+      "descendants": 1
+    }
   },
   {
-    "id": "marquez_childhood_storytelling",
-    "label": "García Márquez childhood storytelling world",
+    "id": "household_storytelling",
+    "label": "Household & intergenerational storytelling",
     "type": "context",
-    "year": 1935,
-    "culture": "Aracataca / Caribbean Colombia",
-    "description": "Childhood environment of family stories, superstition, ghosts, memory, and matter-of-fact narration. García Márquez later described his grandmother's frightening stories and imaginative household as a source of his storytelling imagination.",
-    "tags": ["childhood", "oral-storytelling", "family", "superstition"],
+    "year": null,
+    "culture": "Cross-cultural / locally specific",
+    "description": "Recurring social setting in which stories, family memory, proverbs, legends, beliefs, humor, and local knowledge move between generations through relatives, visitors, and community life. This is a transmission pattern, not a single universal oral tradition; each creator's specific household and culture must be described on the relationship evidence.",
+    "tags": [
+      "oral-transmission",
+      "family",
+      "intergenerational",
+      "storytelling"
+    ],
     "personal_seed": false,
-    "metrics": {"influence_score": 0.0, "betweenness": 0.0, "descendants": 1}
+    "metrics": {
+      "influence_score": 0,
+      "betweenness": 0,
+      "descendants": 1
+    },
+    "layer": "world",
+    "scope": "pattern"
   },
   {
     "id": "banana_massacre_1928",
@@ -94,9 +167,18 @@
     "year": 1928,
     "culture": "Magdalena, Colombia / United Fruit Company",
     "description": "Military repression of striking banana workers in Colombia's Magdalena region. García Márquez transformed the disputed historical event and its contested memory into a central episode of One Hundred Years of Solitude.",
-    "tags": ["labor", "colombia", "corporate-power", "historical-memory"],
+    "tags": [
+      "labor",
+      "colombia",
+      "corporate-power",
+      "historical-memory"
+    ],
     "personal_seed": false,
-    "metrics": {"influence_score": 0.0, "betweenness": 0.0, "descendants": 1}
+    "metrics": {
+      "influence_score": 0,
+      "betweenness": 0,
+      "descendants": 1
+    }
   },
   {
     "id": "colombian_civil_wars",
@@ -105,8 +187,17 @@
     "year": 1899,
     "culture": "Colombia",
     "description": "Repeated nineteenth- and early-twentieth-century conflicts between Liberal and Conservative forces, including the Thousand Days' War. One Hundred Years of Solitude transforms this recurrent political violence into Macondo's repeated wars.",
-    "tags": ["war", "colombia", "liberal", "conservative"],
+    "tags": [
+      "war",
+      "colombia",
+      "liberal",
+      "conservative"
+    ],
     "personal_seed": false,
-    "metrics": {"influence_score": 0.0, "betweenness": 0.0, "descendants": 1}
+    "metrics": {
+      "influence_score": 0,
+      "betweenness": 0,
+      "descendants": 1
+    }
   }
 ]

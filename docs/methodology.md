@@ -178,6 +178,8 @@ Otherwise keep the detail inside an evidence note or beneath a broader node.
 
 **Label the world, not the biography.** A history/context node should be named for the external event, system, place-based process, or tradition itself. For example, use **Klondike Gold Rush**, not “Klondike Gold Rush / London’s Yukon journey.” London’s participation belongs on the relationship to London and in his person dossier. A one-person episode that lacks independent historical or cultural significance should normally not be a World node at all.
 
+**People are not context nodes.** When a specific individual materially shapes a creator or work—through mentorship, editorial intervention, criticism, collaboration, teaching, conversation, or other documented feedback—represent that individual as a Person node when the relationship is important enough to visualize. Example: **Mary O'Hare → Slaughterhouse-Five** is creative feedback / intellectual-social formation, not historical context.
+
 This preserves biography without allowing biography to become the ontology.
 
 ## Mediators matter

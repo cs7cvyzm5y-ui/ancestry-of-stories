@@ -221,5 +221,70 @@
     "source_url": "https://www.iheart.com/podcast/1119-here-we-go-again-with-kal-300268750/episode/bonus-matt-dinniman-discusses-dungeon-crawler-340228290/",
     "source_label": "iHeart — Matt Dinniman discusses Dungeon Crawler Carl",
     "status": "review"
+  },
+  {
+    "source": "running_man",
+    "target": "running_man_film",
+    "relation": "adapted_as",
+    "mechanism": "textual_transmission",
+    "evidence_class": "direct_textual",
+    "confidence": 5,
+    "evidence": "film adaptation relationship",
+    "note": "The 1987 Arnold Schwarzenegger film is a loose adaptation of Stephen King's/Richard Bachman's novel The Running Man. Keeping book and film separate matters because Dinniman explicitly named both.",
+    "source_url": "https://www.iheart.com/podcast/1119-here-we-go-again-with-kal-300268750/episode/bonus-matt-dinniman-discusses-dungeon-crawler-340228290/",
+    "source_label": "iHeart — Matt Dinniman discusses Dungeon Crawler Carl",
+    "status": "verified"
+  },
+  {
+    "source": "running_man",
+    "target": "dungeon_carl",
+    "relation": "influenced",
+    "mechanism": "textual_transmission",
+    "evidence_class": "explicit",
+    "confidence": 5,
+    "evidence": "creator interview",
+    "note": "Dinniman explicitly named the original Richard Bachman/Stephen King book The Running Man as a major influence on Dungeon Crawler Carl. He also clarified that his core 'Alien Game Show' idea existed before he encountered this media, so the edge represents later development rather than the premise's original genesis.",
+    "source_url": "https://www.iheart.com/podcast/1119-here-we-go-again-with-kal-300268750/episode/bonus-matt-dinniman-discusses-dungeon-crawler-340228290/",
+    "source_label": "iHeart — Matt Dinniman discusses Dungeon Crawler Carl",
+    "status": "verified"
+  },
+  {
+    "source": "running_man_film",
+    "target": "dungeon_carl",
+    "relation": "influenced",
+    "mechanism": "textual_transmission",
+    "evidence_class": "explicit",
+    "confidence": 5,
+    "evidence": "creator interview",
+    "note": "Dinniman explicitly named the Schwarzenegger film The Running Man as a major influence on Dungeon Crawler Carl, while distinguishing that later influence from the older 'Alien Game Show' premise he had conceived in school.",
+    "source_url": "https://www.iheart.com/podcast/1119-here-we-go-again-with-kal-300268750/episode/bonus-matt-dinniman-discusses-dungeon-crawler-340228290/",
+    "source_label": "iHeart — Matt Dinniman discusses Dungeon Crawler Carl",
+    "status": "verified"
+  },
+  {
+    "source": "hunger_games",
+    "target": "dungeon_carl",
+    "relation": "influenced",
+    "mechanism": "textual_transmission",
+    "evidence_class": "explicit",
+    "confidence": 5,
+    "evidence": "creator interview",
+    "note": "Dinniman explicitly named The Hunger Games among the works that influenced Dungeon Crawler Carl, again noting that the underlying 'Alien Game Show' idea predated his exposure to these later works.",
+    "source_url": "https://www.iheart.com/podcast/1119-here-we-go-again-with-kal-300268750/episode/bonus-matt-dinniman-discusses-dungeon-crawler-340228290/",
+    "source_label": "iHeart — Matt Dinniman discusses Dungeon Crawler Carl",
+    "status": "verified"
+  },
+  {
+    "source": "battle_royale",
+    "target": "dungeon_carl",
+    "relation": "influenced",
+    "mechanism": "textual_transmission",
+    "evidence_class": "explicit",
+    "confidence": 5,
+    "evidence": "creator interview",
+    "note": "Dinniman explicitly cited Battle Royale as part of the body of survival/death-game media that influenced him and Dungeon Crawler Carl, while separating those later influences from his earlier 'Alien Game Show' concept.",
+    "source_url": "https://www.iheart.com/podcast/1119-here-we-go-again-with-kal-300268750/episode/bonus-matt-dinniman-discusses-dungeon-crawler-340228290/",
+    "source_label": "iHeart — Matt Dinniman discusses Dungeon Crawler Carl",
+    "status": "verified"
   }
 ]
